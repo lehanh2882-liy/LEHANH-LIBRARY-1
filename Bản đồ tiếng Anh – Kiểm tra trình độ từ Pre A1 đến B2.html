@@ -1,0 +1,1245 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bản đồ tiếng Anh – Kiểm tra trình độ từ Pre A1 đến B2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --leaf:#2F6B3A; --leaf-deep:#1F4D29; --grass:#A8D08D; --mist:#EAF4E2;
+  --sand:#E9D8A6; --sun:#F2B134; --ink:#1F3326; --muted:#55705C;
+  --card:rgba(255,255,255,.88); --card-line:rgba(47,107,58,.2);
+  --opt:#ffffff; --opt-hover:#F3F9EE; --sky-top:#DDF0F7; --sky-bot:#EAF4E2;
+  --tree1:#4E8F55; --tree2:#6FAE63; --tree3:#3C7A45; --hill:#BFDDA4;
+  --red:#D9614C; --on-sun:#3a2a00; --on-leaf:#ffffff;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --leaf:#8CCB8F; --leaf-deep:#B8E3B2; --grass:#3E6B45; --mist:#16261B;
+    --sand:#5C5236; --ink:#E5F1E3; --muted:#A9C2AC;
+    --card:rgba(22,38,27,.9); --card-line:rgba(140,203,143,.24);
+    --opt:#1C3022; --opt-hover:#24402C; --sky-top:#0F1D14; --sky-bot:#16261B;
+    --tree1:#2C5532; --tree2:#36663B; --tree3:#244A2A; --hill:#1F3A25;
+    --red:#E58472; --on-leaf:#0f1d14;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --leaf:#8CCB8F; --leaf-deep:#B8E3B2; --grass:#3E6B45; --mist:#16261B;
+  --sand:#5C5236; --ink:#E5F1E3; --muted:#A9C2AC;
+  --card:rgba(22,38,27,.9); --card-line:rgba(140,203,143,.24);
+  --opt:#1C3022; --opt-hover:#24402C; --sky-top:#0F1D14; --sky-bot:#16261B;
+  --tree1:#2C5532; --tree2:#36663B; --tree3:#244A2A; --hill:#1F3A25;
+  --red:#E58472; --on-leaf:#0f1d14;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--sky-bot);line-height:1.55}
+.park{position:fixed;inset:0;z-index:0;overflow:hidden;background:linear-gradient(var(--sky-top),var(--sky-bot) 70%)}
+.park svg{position:absolute;inset:-4%;width:108%;height:108%;filter:blur(6px);opacity:.75}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:24px 18px 48px}
+h1,h2,h3,h4{font-family:"Baloo 2","Be Vietnam Pro",system-ui,sans-serif;line-height:1.15;margin:0}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}
+header.top h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;color:var(--leaf-deep)}
+header.top p{margin:4px 0 0;color:var(--muted);max-width:58ch}
+
+/* Nút giọng đọc */
+.voice-btn{font:inherit;font-weight:600;display:inline-flex;gap:8px;align-items:center;border-radius:999px;padding:9px 16px;border:2px solid var(--leaf);background:var(--card);color:var(--leaf-deep);cursor:pointer}
+.voice-panel{position:relative}
+.vp{position:absolute;right:0;top:calc(100% + 8px);width:min(340px,88vw);background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--card-line);border-radius:18px;padding:14px;box-shadow:0 18px 40px -18px rgba(31,77,41,.5);z-index:20}
+.vp label{display:block;font-weight:600;font-size:.9rem;margin:8px 0 4px}
+.vp select{font:inherit;width:100%;padding:8px 10px;border-radius:10px;border:2px solid var(--card-line);background:var(--opt);color:var(--ink)}
+.seg{display:flex;gap:6px}
+.seg button{flex:1;font:inherit;padding:7px 8px;border-radius:10px;border:2px solid var(--card-line);background:var(--opt);color:var(--ink);cursor:pointer}
+.seg button.on{border-color:var(--leaf);background:var(--opt-hover);font-weight:600}
+.vp .warn{font-size:.85rem;color:var(--red);margin:8px 0 0}
+.vp .hint{font-size:.8rem;color:var(--muted);margin:8px 0 0}
+
+.layout{display:grid;grid-template-columns:minmax(280px,380px) 1fr;gap:20px;align-items:start}
+@media (max-width:860px){.layout{grid-template-columns:1fr}}
+
+/* Bản đồ ma trận */
+.map{background:var(--card);border:1px solid var(--card-line);border-radius:22px;padding:16px;backdrop-filter:blur(6px)}
+.map h2{font-size:1.15rem;color:var(--leaf-deep)}
+.map .sub{font-size:.85rem;color:var(--muted);margin:2px 0 12px}
+.grid{display:grid;grid-template-columns:76px repeat(4,1fr);gap:8px;align-items:center;position:relative}
+.colhead{text-align:center;font-size:.8rem;color:var(--muted);font-weight:600}
+.rowhead{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:.9rem;color:var(--leaf-deep);line-height:1.1}
+.rowhead small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-weight:500;font-size:.7rem;color:var(--muted)}
+.row-trail{grid-column:2 / 6;height:0;border-top:10px solid var(--sand);border-radius:6px;margin:-4px 8px;opacity:.9}
+.cell{position:relative;aspect-ratio:1;border-radius:50%;border:2.5px solid var(--leaf);background:var(--opt);color:var(--leaf-deep);font:inherit;font-size:1.25rem;cursor:pointer;display:grid;place-items:center;max-width:58px;justify-self:center;width:100%}
+.cell:hover{background:var(--opt-hover)}
+.cell.s2{background:var(--leaf);color:var(--on-leaf)}
+.cell.s1{background:var(--sun);border-color:var(--sun);color:var(--on-sun)}
+.cell.s0{background:var(--red);border-color:var(--red);color:#fff}
+.cell.sx{border-style:dashed;opacity:.6}
+.cell.cur{box-shadow:0 0 0 4px var(--card),0 0 0 7px var(--sun)}
+.cell.cur::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:3px solid var(--sun);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+@media (prefers-reduced-motion:reduce){.cell.cur::after{animation:none;opacity:.4}}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-top:12px}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px;border:2px solid var(--leaf);background:var(--opt)}
+.legend .l2::before{background:var(--leaf)}
+.legend .l1::before{background:var(--sun);border-color:var(--sun)}
+.legend .l0::before{background:var(--red);border-color:var(--red)}
+.map .to-result{margin-top:12px;width:100%}
+
+/* Thẻ câu hỏi */
+.card{background:var(--card);border:1px solid var(--card-line);border-radius:26px;padding:26px clamp(18px,3vw,34px);box-shadow:0 18px 50px -20px rgba(31,77,41,.45),0 0 0 6px rgba(242,177,52,.18);backdrop-filter:blur(8px)}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.chip{font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--mist);color:var(--leaf-deep);border:1px solid var(--card-line)}
+.chip.sun{background:var(--sun);color:var(--on-sun);border-color:transparent}
+.card h3{font-size:clamp(1.3rem,2.6vw,1.65rem);font-weight:700;color:var(--leaf-deep);margin-bottom:8px}
+.card p.detail{margin:0 0 14px;max-width:62ch}
+.try{background:var(--mist);border-left:5px solid var(--sun);border-radius:12px;padding:12px 14px;margin:0 0 18px}
+.try b.t{display:block;font-family:"Baloo 2",sans-serif;font-size:1.02rem;color:var(--leaf-deep);margin-bottom:2px}
+.try ul{margin:6px 0 0;padding-left:20px}
+.try li{margin:3px 0}
+.en{font-weight:600;color:var(--leaf)}
+.audio-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 2px}
+.play{font:inherit;font-weight:600;display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:8px 16px;border:2px solid var(--leaf);background:var(--opt);color:var(--leaf-deep);cursor:pointer}
+.play.on{background:var(--leaf);color:var(--on-leaf)}
+.play .ic{font-size:1.1rem}
+.audio-note{font-size:.8rem;color:var(--muted);margin:4px 0 0}
+.linkish{font:inherit;font-size:.8rem;background:none;border:0;color:var(--leaf);text-decoration:underline;cursor:pointer;padding:0}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;font:inherit;color:var(--ink);background:var(--opt);border:2px solid var(--card-line);border-radius:16px;padding:12px 14px;cursor:pointer;transition:background .15s,border-color .15s}
+.opt:hover{background:var(--opt-hover);border-color:var(--leaf)}
+.opt.sel{border-color:var(--leaf);background:var(--opt-hover)}
+.opt .dot{flex:none;width:26px;height:26px;border-radius:50%;margin-top:2px}
+.opt .d2{background:var(--leaf)} .opt .d1{background:var(--sun)} .opt .d0{background:var(--red)}
+.opt strong{display:block}
+.opt small{color:var(--muted)}
+.nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:18px;gap:10px}
+.btn{font:inherit;font-weight:600;border-radius:999px;padding:10px 20px;cursor:pointer;border:2px solid var(--leaf);background:transparent;color:var(--leaf-deep)}
+.btn.primary{background:var(--leaf);color:var(--on-leaf)}
+.btn.ghost{border-color:transparent;text-decoration:underline}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+label.field{display:block;font-weight:600;margin:14px 0 6px}
+input.text{font:inherit;width:100%;max-width:340px;padding:10px 12px;border-radius:12px;border:2px solid var(--card-line);background:var(--opt);color:var(--ink)}
+.starts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.start{font:inherit;text-align:left;color:var(--ink);background:var(--opt);border:2px solid var(--card-line);border-radius:16px;padding:12px 14px;cursor:pointer}
+.start:hover{border-color:var(--leaf);background:var(--opt-hover)}
+.start strong{display:block;font-family:"Baloo 2",sans-serif;font-size:1.05rem;color:var(--leaf-deep)}
+.start small{color:var(--muted)}
+.disclaimer{font-size:.85rem;color:var(--muted);margin-top:16px;border-top:1px dashed var(--card-line);padding-top:12px}
+
+/* Kết quả */
+.badge{display:inline-block;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.25rem;background:var(--sun);color:var(--on-sun);padding:10px 18px;border-radius:18px;margin:4px 0 14px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0 18px}
+.skill{background:var(--opt);border:1px solid var(--card-line);border-radius:16px;padding:12px 14px}
+.skill h4{font-size:1.05rem;color:var(--leaf-deep);display:flex;justify-content:space-between;gap:8px;align-items:center}
+.steps{display:flex;gap:4px;margin:8px 0 4px}
+.steps i{flex:1;height:10px;border-radius:6px;background:var(--mist);border:1px solid var(--card-line)}
+.steps i.on{background:var(--leaf);border-color:var(--leaf)}
+.steps i.half{background:var(--sun);border-color:var(--sun)}
+.steps-lb{display:flex;gap:4px;font-size:.68rem;color:var(--muted)}
+.steps-lb span{flex:1;text-align:center}
+.skill p{margin:6px 0 0;font-size:.9rem}
+.tag{font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.tag.ok{background:rgba(47,107,58,.15);color:var(--leaf-deep)}
+.tag.mid{background:rgba(242,177,52,.28);color:var(--ink)}
+.tag.weak{background:rgba(217,97,76,.2);color:var(--ink)}
+.tag.na{background:var(--mist);color:var(--muted)}
+.plan{background:var(--mist);border-radius:16px;padding:14px 16px;margin-bottom:12px}
+.plan h4{font-size:1.1rem;color:var(--leaf-deep);margin-bottom:6px}
+.plan ol,.plan ul{margin:6px 0 0;padding-left:20px}
+.plan li{margin:4px 0}
+.more{border:2px dashed var(--sun);border-radius:16px;padding:12px 16px}
+.more h4{font-size:1.02rem;color:var(--leaf-deep)}
+.more .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.more .btn{padding:6px 14px;font-size:.9rem}
+
+/* Các câu hỏi tương tác */
+.dots{display:flex;gap:6px;align-items:center}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--mist);border:2px solid var(--leaf)}
+.dots i.done{background:var(--leaf)}
+.dots i.now{background:var(--sun);border-color:var(--sun)}
+.hand{font-size:.9rem;background:var(--mist);border-radius:12px;padding:8px 12px;margin:0 0 14px;color:var(--ink)}
+.prompt-bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:12px}
+.pcount{font-size:.85rem;color:var(--muted);font-weight:600}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:10px}
+.tile{aspect-ratio:1;border-radius:18px;border:3px solid var(--card-line);background:var(--opt);display:grid;place-items:center;cursor:pointer;font:inherit;color:var(--ink);transition:transform .12s,border-color .12s}
+.tile:hover{border-color:var(--leaf)}
+.tile:active{transform:scale(.95)}
+.tile.picked{border-color:var(--sun);background:var(--opt-hover)}
+.tile.static{cursor:default}
+.emo{font-size:clamp(2.2rem,6vw,3rem);line-height:1}
+.sw{width:62%;aspect-ratio:1;border-radius:50%;box-shadow:inset 0 -4px 0 rgba(0,0,0,.15)}
+.num{font-family:"Baloo 2",sans-serif;font-weight:800;font-size:clamp(1.8rem,5vw,2.4rem);color:var(--leaf-deep)}
+.scene{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;background:var(--opt);border:2px solid var(--card-line);border-radius:20px;padding:16px;margin-bottom:12px}
+.scene .emo{font-size:clamp(2.6rem,8vw,3.6rem)}
+.scene .sw{width:64px}
+.read{font-family:"Baloo 2",sans-serif;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;text-align:center;color:var(--ink);margin:4px 0 14px}
+.read .gap{display:inline-block;min-width:3.2em;border-bottom:3px solid var(--leaf)}
+.words{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.word{font:inherit;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.35rem;min-width:110px;padding:10px 18px;border-radius:16px;border:3px solid var(--card-line);background:var(--opt);color:var(--ink);cursor:pointer}
+.word:hover{border-color:var(--leaf)}
+.word.picked{border-color:var(--sun);background:var(--opt-hover)}
+.slots{display:flex;justify-content:center;gap:8px;margin:4px 0 14px}
+.slot{width:48px;height:56px;border-radius:12px;border:3px dashed var(--leaf);display:grid;place-items:center;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.7rem;color:var(--leaf-deep);background:var(--opt)}
+.letters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+.letter{width:56px;height:56px;border-radius:14px;border:3px solid var(--card-line);background:var(--opt);font:inherit;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:1.7rem;color:var(--ink);cursor:pointer}
+.letter[disabled]{opacity:.25;cursor:default}
+.typebox{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.typebox input{font:inherit;font-family:"Baloo 2",sans-serif;font-size:1.5rem;font-weight:700;text-align:center;width:min(260px,70vw);padding:8px 12px;border-radius:14px;border:3px solid var(--leaf);background:var(--opt);color:var(--ink)}
+.small-actions{display:flex;justify-content:center;gap:12px;margin-top:12px}
+.qlist{display:grid;gap:10px;margin-bottom:16px}
+.qrow{display:flex;align-items:center;gap:12px;background:var(--opt);border:2px solid var(--card-line);border-radius:16px;padding:8px 12px}
+.qrow .scene{margin:0;padding:6px 10px;border:0;background:transparent;flex:none}
+.qrow .scene .emo{font-size:2.2rem}
+.qrow .scene .sw{width:40px}
+.donebox{text-align:center;padding:18px;background:var(--mist);border-radius:16px}
+.cell small.part{position:absolute;bottom:-4px;right:-6px;font-size:.62rem;font-weight:700;background:var(--sun);color:var(--on-sun);border-radius:999px;padding:1px 5px}
+.cell.partial{border-style:dashed}
+.headnote{font-size:.82rem;color:var(--muted);margin-top:6px}
+.areas{font-size:.85rem;color:var(--muted);margin-top:4px}
+/* Bổ sung bản đầy đủ */
+.word[disabled]{opacity:.3;cursor:default}
+.passage{background:var(--opt);border:2px solid var(--card-line);border-radius:16px;padding:14px 16px;margin:0 0 12px;font-size:1.02rem;line-height:1.65;max-width:68ch}
+.passage.notice{border-style:dashed;border-color:var(--leaf);font-weight:500}
+.qtext{font-weight:600;font-size:1.1rem;color:var(--leaf-deep);margin:6px 0 10px}
+.mopts{display:grid;gap:8px}
+.mopt{text-align:left;font:inherit;padding:11px 14px;border-radius:14px;border:2px solid var(--card-line);background:var(--opt);color:var(--ink);cursor:pointer}
+.mopt:hover{border-color:var(--leaf);background:var(--opt-hover)}
+.mopt.picked{border-color:var(--sun);background:var(--opt-hover)}
+.built{min-height:56px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px;text-align:center;font-family:"Baloo 2",sans-serif;font-weight:700;font-size:1.35rem;border-bottom:3px dashed var(--leaf);margin:4px auto 14px;max-width:560px;padding:6px 8px}
+.built .ph{font-family:"Be Vietnam Pro",sans-serif;font-weight:500;font-size:.95rem;color:var(--muted)}
+.task{background:var(--opt);border:2px dashed var(--leaf);border-radius:16px;padding:12px 16px;margin:0 0 12px;max-width:68ch}
+.task p{margin:4px 0}
+.cell{font-size:1.1rem}
+
+/* Bản đồ trạm */
+:root{--z1:#D9EFB8;--z2:#A9D394;--z3:#C8E0A0;--z4:#CDE7DA;--z5:#DCE9F1;--rock:#AEBBA8;--snow:#ffffff;--river:#8CC8E8;--trailbase:#EEDCA8;--traildash:#9C7A45;--wood:#8B5E34;--tree:#4E8F55;--trunk:#7a5a3a;--hilldark:#B2D088;--house:#EED1A4;--roof:#C8644E;--flower:#ffffff;--pinlabel:rgba(255,255,255,.88)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--z1:#24402B;--z2:#1C3523;--z3:#28432D;--z4:#1F3736;--z5:#18262E;--rock:#3B4B47;--snow:#C9D6DE;--river:#2F5D78;--trailbase:#6B5C3A;--traildash:#E2C88F;--wood:#B98454;--tree:#2E5C35;--trunk:#5a4430;--hilldark:#30502F;--house:#7A6648;--roof:#9A4E3E;--flower:#d9e8d3;--pinlabel:rgba(22,38,27,.9)}}
+:root[data-theme="dark"]{--z1:#24402B;--z2:#1C3523;--z3:#28432D;--z4:#1F3736;--z5:#18262E;--rock:#3B4B47;--snow:#C9D6DE;--river:#2F5D78;--trailbase:#6B5C3A;--traildash:#E2C88F;--wood:#B98454;--tree:#2E5C35;--trunk:#5a4430;--hilldark:#30502F;--house:#7A6648;--roof:#9A4E3E;--flower:#d9e8d3;--pinlabel:rgba(22,38,27,.9)}
+.mapbox{position:relative;width:100%;max-width:440px;margin:0 auto;aspect-ratio:400/660;border-radius:20px;overflow:hidden;border:4px solid var(--wood);box-shadow:inset 0 0 0 3px rgba(255,255,255,.3),0 10px 24px -14px rgba(31,77,41,.6)}
+.mapsvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.mapbox .cell{position:absolute;transform:translate(-50%,-50%);width:clamp(34px,11%,46px);max-width:none;aspect-ratio:1;border:3px solid #fff;font-size:1.05rem;box-shadow:0 3px 0 rgba(0,0,0,.22),0 6px 10px -4px rgba(0,0,0,.45);z-index:2;padding:0}
+.mapbox .cell.sx,.mapbox .cell.partial{border-style:dashed}
+.mapbox .cell.cur{box-shadow:0 0 0 3px var(--sun),0 6px 12px -4px rgba(0,0,0,.45);z-index:3}
+.mapbox .cell:hover{transform:translate(-50%,-50%) scale(1.08)}
+.cell .pl{position:absolute;top:calc(100% + 3px);left:50%;transform:translateX(-50%);font-size:.6rem;font-weight:700;line-height:1.3;color:var(--ink);background:var(--pinlabel);padding:0 5px;border-radius:6px;white-space:nowrap;pointer-events:none}
+.sign{position:absolute;transform:translateY(-50%);background:var(--wood);color:#FFF6E6;border-radius:7px;padding:2px 9px 3px;font-family:"Baloo 2",sans-serif;line-height:1.05;box-shadow:0 3px 0 rgba(0,0,0,.25);z-index:1;text-align:center}
+.sign.left{left:3%}.sign.right{right:3%}
+.sign b{display:block;font-size:.95rem}.sign small{display:block;font-size:.66rem;font-weight:500;opacity:.92}
+.sign::after{content:"";position:absolute;left:50%;top:100%;width:4px;height:9px;margin-left:-2px;background:var(--wood)}
+.flag{position:absolute;transform:translate(-30%,-80%);font-size:1.3rem;z-index:1;line-height:1;text-align:center}
+.flag.goal small{display:block;font-family:"Baloo 2",sans-serif;font-weight:800;font-size:.7rem;color:var(--ink);background:var(--pinlabel);border-radius:6px;padding:0 4px;margin-top:1px}
+/* Hình minh họa */
+.sc{position:relative;display:block;width:100%;height:100%;overflow:hidden;border-radius:12px;font-size:clamp(12px,3.4vw,16px)}
+.sc .it{position:absolute;transform:translate(-50%,-50%);line-height:1}
+.tile.has-sc{padding:0;overflow:hidden}
+.tile .ill{width:92%;display:block}.tile .ill svg,.scene .ill svg{display:block;width:100%;height:auto}
+.scene .ill{width:96px;display:block}
+.scene .sc{width:168px;height:126px;font-size:21px;border:2px solid var(--card-line)}
+.qrow .scene .sc{width:132px;height:99px;font-size:17px}
+.qrow .scene .ill{width:72px}
+.qrow{flex-wrap:wrap}
+.strip-row{flex-direction:column;align-items:stretch}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;width:100%}
+.strip .fig{position:relative}
+.strip .sc{width:100%;height:auto;aspect-ratio:4/3;font-size:clamp(14px,2.6vw,19px);border:2px solid var(--card-line)}
+.stepn{position:absolute;top:6px;left:6px;z-index:1;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--sun);color:var(--on-sun);font-family:"Baloo 2",sans-serif;font-weight:800;font-size:.85rem}
+.strip-row .play{align-self:flex-start}
+.fig{display:inline-flex;flex-direction:column;align-items:center;gap:4px}
+.fig small{font-weight:600;font-size:.8rem;color:var(--leaf-deep)}
+.bg-grass{background:linear-gradient(#CFEAF7 0 52%,#9FD17F 52%)}
+.bg-water{background:linear-gradient(#CFEAF7 0 46%,#6FB6E0 46%)}
+.bg-kitchen{background:linear-gradient(#F6EAD2 0 70%,#D9B98C 70%)}
+.bg-room{background:linear-gradient(#ECE6F6 0 72%,#CDB99B 72%)}
+.bg-night{background:linear-gradient(#22305A 0 74%,#3E5A3A 74%)}
+.bg-snownight{background:linear-gradient(#2B3A66 0 60%,#F4F7FB 60%)}
+.bg-beach{background:linear-gradient(#BFE6FA 0 40%,#5FB5E0 40% 62%,#F2DC9B 62%)}
+.bg-storm{background:linear-gradient(#7D8A99 0 58%,#8FA77A 58%)}
+.bg-road{background:linear-gradient(#CFEAF7 0 46%,#9FD17F 46% 66%,#A3A3A3 66% 90%,#9FD17F 90%)}
+/* Đáp án gợi ý phần Nói */
+.ans{margin:6px 0 0;padding:6px 10px;background:var(--mist);border-left:4px solid var(--sun);border-radius:8px;font-size:.92rem}
+.model{background:var(--mist);border-left:5px solid var(--sun);border-radius:12px;padding:10px 14px;margin:0 0 12px;max-width:68ch}
+.model p{margin:4px 0 0}
+.reveal-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 14px}
+.btn.rev{border-color:var(--sun);background:var(--sun);color:var(--on-sun)}
+.lockmsg{font-size:.85rem;color:var(--muted);flex:1;min-width:200px}
+.opts.locked .opt{opacity:.45;cursor:not-allowed}
+</style>
+</head>
+<body>
+<div class="park" aria-hidden="true">
+  <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+    <ellipse cx="200" cy="760" rx="520" ry="200" fill="var(--hill)"/>
+    <ellipse cx="1000" cy="780" rx="560" ry="220" fill="var(--hill)"/>
+    <path d="M520 800 C 560 650, 700 640, 640 520 S 760 400, 820 380" stroke="var(--sand)" stroke-width="60" fill="none" stroke-linecap="round" opacity=".8"/>
+    <g fill="var(--tree3)"><rect x="96" y="420" width="18" height="160" rx="6" fill="#7a5a3a"/><circle cx="105" cy="400" r="90"/><circle cx="60" cy="460" r="60"/><circle cx="150" cy="450" r="64"/></g>
+    <g fill="var(--tree1)"><rect x="300" y="470" width="14" height="120" rx="5" fill="#7a5a3a"/><circle cx="307" cy="450" r="70"/><circle cx="270" cy="490" r="46"/></g>
+    <g fill="var(--tree2)"><rect x="960" y="420" width="18" height="170" rx="6" fill="#7a5a3a"/><circle cx="969" cy="390" r="100"/><circle cx="1050" cy="440" r="70"/><circle cx="900" cy="450" r="62"/></g>
+    <g fill="var(--tree1)"><rect x="1120" y="500" width="14" height="110" rx="5" fill="#7a5a3a"/><circle cx="1127" cy="480" r="66"/></g>
+    <g fill="var(--tree2)"><rect x="700" y="330" width="10" height="70" rx="4" fill="#7a5a3a"/><circle cx="705" cy="320" r="44"/></g>
+    <circle cx="1040" cy="120" r="56" fill="var(--sun)" opacity=".55"/>
+    <g fill="var(--grass)" opacity=".7"><circle cx="420" cy="700" r="40"/><circle cx="760" cy="720" r="50"/><circle cx="160" cy="680" r="34"/></g>
+  </svg>
+</div>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Bản đồ tiếng Anh</h1>
+      <p>Bố mẹ chọn điểm xuất phát gần với con nhất, cùng con đi qua từng trạm trên bản đồ rồi chọn mức con làm được. Cuối hành trình có kết quả, kỹ năng cần bồi đắp và gợi ý lộ trình.</p>
+      <p class="headnote">5 cấp theo khung CEFR: Pre A1 Starters, A1 Movers, A2 Flyers/Key, B1 Preliminary, B2 First.</p>
+    </div>
+    <div class="voice-panel">
+      <button class="voice-btn" id="voiceBtn" aria-expanded="false" aria-controls="vp">🔊 Giọng đọc</button>
+      <div class="vp" id="vp" hidden>
+        <label for="voiceSel">Chọn giọng tiếng Anh</label>
+        <select id="voiceSel"></select>
+        <label>Tốc độ</label>
+        <div class="seg" id="rateSeg">
+          <button data-r="0.65">Rất chậm</button><button data-r="0.8">Chậm</button><button data-r="0.95">Vừa</button>
+        </div>
+        <div style="margin-top:12px"><button class="play" id="voiceTest"><span class="ic">▶</span> Nghe thử</button></div>
+        <p class="warn" id="voiceWarn" hidden></p>
+        <p class="hint">Danh sách giọng phụ thuộc vào máy và trình duyệt. Chrome, Edge và Safari thường có nhiều giọng Anh – Mỹ và Anh – Anh.</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="map" aria-label="Bản đồ các trạm">
+      <h2>Bản đồ các trạm</h2>
+      <p class="sub">Chạm vào trạm bất kỳ để làm ngay, không cần làm theo thứ tự.</p>
+      <div class="mapbox" id="grid"></div>
+      <div class="legend"><span>Chưa làm</span><span class="l2">Làm được</span><span class="l1">Cần gợi ý</span><span class="l0">Chưa làm được</span></div>
+      <button class="btn to-result" id="toResult">Xem kết quả</button>
+    </aside>
+    <main>
+      <section class="card" id="card" aria-live="polite"></section>
+    </main>
+  </div>
+</div>
+
+<script>
+/* ==========================================================
+   CẤU HÌNH NỘI BỘ – không hiển thị cho phụ huynh.
+   Tham chiếu: khung CEFR (Pre A1 → B2) và dạng bài Cambridge English:
+   Starters (Pre A1), Movers (A1), Flyers / A2 Key for Schools (A2),
+   B1 Preliminary for Schools, B2 First for Schools.
+   Mỗi ô (cấp × kỹ năng) có 3 phần; Nghe, Đọc, Viết phần lớn máy tự chấm,
+   Nói và bài viết dài do bố mẹ (hoặc giáo viên) đánh giá theo tiêu chí.
+   ========================================================== */
+const SKILLS=[{key:"L",name:"Nghe",icon:"👂"},{key:"S",name:"Nói",icon:"💬"},{key:"R",name:"Đọc",icon:"📖"},{key:"W",name:"Viết",icon:"✏️"}];
+const LEVELS=[
+  {key:"PA1",name:"Pre A1 Starters",cefr:"Pre A1",short:"Starters"},
+  {key:"A1",name:"A1 Movers",cefr:"A1",short:"Movers"},
+  {key:"A2",name:"A2 Flyers / Key",cefr:"A2",short:"Flyers"},
+  {key:"B1",name:"B1 Preliminary",cefr:"B1",short:"PET"},
+  {key:"B2",name:"B2 First",cefr:"B2",short:"FCE"}
+];
+const C={red:"#E53935",blue:"#1E88E5",green:"#43A047",yellow:"#FDD835",pink:"#F48FB1",orange:"#FB8C00",purple:"#8E24AA",brown:"#795548"};
+const E=e=>({e}), SW=c=>({c}), N=t=>({t});
+/* Hình minh họa: OBJ – đồ vật tô màu; CLK – đồng hồ kim; SC – cảnh ghép (nền + các hình đặt theo tọa độ %) */
+const OBJ=(k,c)=>({s:objSVG(k,c)}), CLK=(h,m)=>({s:clockSVG(h,m),lb:`${h}:${String(m).padStart(2,"0")}`});
+const SC=(bg,it,cap)=>({sc:{bg,it},cap});
+function objSVG(k,c){
+  const o='stroke="#2b2b2b" stroke-width="3" stroke-linejoin="round"';
+  if(k==="ball")return `<svg viewBox="0 0 100 100"><circle cx="50" cy="52" r="36" fill="${c}" ${o}/><path d="M20 40 Q50 60 80 40 M22 66 Q50 48 78 66" fill="none" stroke="#fff" stroke-width="5" opacity=".85"/></svg>`;
+  if(k==="cat")return `<svg viewBox="0 0 100 100"><path d="M74 84 Q98 78 88 54" fill="none" stroke="#2b2b2b" stroke-width="13" stroke-linecap="round"/><path d="M74 84 Q98 78 88 54" fill="none" stroke="${c}" stroke-width="7" stroke-linecap="round"/><ellipse cx="52" cy="70" rx="26" ry="19" fill="${c}" ${o}/><path d="M30 20 L34 42 L45 30 Z M70 20 L66 42 L55 30 Z" fill="${c}" ${o}/><circle cx="50" cy="44" r="19" fill="${c}" ${o}/><circle cx="43" cy="42" r="3" fill="#2b2b2b"/><circle cx="57" cy="42" r="3" fill="#2b2b2b"/><path d="M46 50 L50 53 L54 50" fill="none" stroke="#2b2b2b" stroke-width="2.5"/></svg>`;
+  if(k==="bird")return `<svg viewBox="0 0 100 100"><path d="M24 58 L6 46 L10 66 Z" fill="${c}" ${o}/><path d="M40 80 L37 92 M52 80 L55 92" stroke="#2b2b2b" stroke-width="3"/><ellipse cx="46" cy="62" rx="26" ry="19" fill="${c}" ${o}/><circle cx="66" cy="40" r="15" fill="${c}" ${o}/><path d="M80 37 L95 42 L80 47 Z" fill="#F2A03D" ${o}/><circle cx="70" cy="37" r="3" fill="#2b2b2b"/><path d="M32 58 Q46 76 60 60" fill="none" stroke="#2b2b2b" stroke-width="3"/></svg>`;
+  return `<svg viewBox="0 0 100 100"><path d="M8 66 L12 50 L28 47 L39 30 L68 30 L80 47 L92 51 L92 68 Z" fill="${c}" ${o}/><path d="M43 35 L53 35 L53 46 L35 46 Z M57 35 L66 35 L74 46 L57 46 Z" fill="#dff1fb" stroke="#2b2b2b" stroke-width="2"/><circle cx="30" cy="70" r="10" fill="#333" stroke="#2b2b2b" stroke-width="3"/><circle cx="72" cy="70" r="10" fill="#333" stroke="#2b2b2b" stroke-width="3"/><circle cx="30" cy="70" r="4" fill="#ccc"/><circle cx="72" cy="70" r="4" fill="#ccc"/></svg>`;
+}
+function clockSVG(h,m){
+  const R=Math.PI/180, ha=((h%12)+m/60)*30*R, ma=m*6*R;
+  const ticks=[...Array(12)].map((_,i)=>{const a=i*30*R,r1=i%3?35:30;return `<line x1="${(50+r1*Math.sin(a)).toFixed(1)}" y1="${(50-r1*Math.cos(a)).toFixed(1)}" x2="${(50+40*Math.sin(a)).toFixed(1)}" y2="${(50-40*Math.cos(a)).toFixed(1)}" stroke="#2b2b2b" stroke-width="${i%3?2:3.5}"/>`;}).join("");
+  const nums=[[12,0],[3,90],[6,180],[9,270]].map(([n,d])=>`<text x="${(50+23*Math.sin(d*R)).toFixed(1)}" y="${(54-23*Math.cos(d*R)).toFixed(1)}" text-anchor="middle" font-size="11" font-weight="700" fill="#2b2b2b" font-family="sans-serif">${n}</text>`).join("");
+  return `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#fff" stroke="#2F6B3A" stroke-width="5"/>${ticks}${nums}<line x1="50" y1="50" x2="${(50+20*Math.sin(ha)).toFixed(1)}" y2="${(50-20*Math.cos(ha)).toFixed(1)}" stroke="#2b2b2b" stroke-width="6" stroke-linecap="round"/><line x1="50" y1="50" x2="${(50+33*Math.sin(ma)).toFixed(1)}" y2="${(50-33*Math.cos(ma)).toFixed(1)}" stroke="#D9614C" stroke-width="3.5" stroke-linecap="round"/><circle cx="50" cy="50" r="4" fill="#2b2b2b"/></svg>`;
+}
+
+/* Kiểu câu:
+   choice – mỗi lượt có (âm thanh/tranh/câu) và các lựa chọn, con tự chạm, máy tự chấm
+   mcq    – nghe hoặc đọc đoạn (chung hoặc riêng từng câu), trả lời câu hỏi trắc nghiệm
+   spell  – ghép chữ cái thành từ;  order – xếp từ thành câu;  type – gõ một từ
+   rate   – bố mẹ đánh giá theo tiêu chí
+   Hội thoại: say là mảng [người nói, câu]; người nói 1 dùng giọng thứ hai.        */
+const RATE3=(a,b,c)=>[a,b,c];
+const Q={
+PA1:{
+ L:{items:[
+  {type:"choice",listen:true,area:"Từ vựng con vật, đồ vật",title:"Nghe và chạm vào đúng hình",
+   hand:"Đưa máy cho con. Bấm ▶ để con nghe, con tự chạm vào hình đúng. Mỗi lượt nên nghe tối đa 2 lần.",
+   tip:"Ôn từ vựng con vật và đồ vật quen thuộc qua thẻ tranh, bài hát; chơi trò nghe và chỉ.",
+   board:[E("🐱"),E("🐶"),E("🐟"),E("🐦"),E("🍎"),E("⚽"),E("🚗"),E("📖")],
+   prompts:[{say:"Find the fish.",ans:2},{say:"Find the car.",ans:6},{say:"Find the bird.",ans:3},{say:"Find the book.",ans:7}]},
+  {type:"choice",listen:true,area:"Số đếm 1–20",title:"Nghe và chạm vào đúng số",
+   hand:"Bấm ▶ để con nghe một con số, con chạm vào số đó.",
+   tip:"Ôn số 1–20, chú ý các cặp dễ nhầm như 12 và 20, 13 và 3; đếm đồ vật bằng tiếng Anh mỗi ngày.",
+   board:[N("3"),N("7"),N("12"),N("13"),N("15"),N("19"),N("20"),N("17")],
+   prompts:[{say:"twelve",ans:2},{say:"thirteen",ans:3},{say:"seven",ans:1},{say:"nineteen",ans:5}]},
+  {type:"choice",listen:true,area:"Màu sắc trong câu nói",title:"Nghe câu và chạm vào đúng hình",
+   hand:"Bấm ▶ để con nghe một câu ngắn, con chạm vào đúng đồ vật có màu được nhắc đến.",
+   tip:"Ôn tên màu và nghe màu trong câu ngắn, ví dụ chơi tô màu theo lời bố mẹ đọc.",
+   board:[OBJ("ball",C.red),OBJ("ball",C.green),OBJ("cat",C.orange),OBJ("cat",C.brown),OBJ("bird",C.purple),OBJ("bird",C.blue),OBJ("car",C.pink),OBJ("car",C.yellow)],
+   prompts:[{say:"Colour the ball green.",ans:1},{say:"My cat is orange.",ans:2},{say:"Colour the bird purple.",ans:4},{say:"The car is pink.",ans:6}]}
+ ]},
+ S:{items:[
+  {type:"rate",area:"Gọi tên đồ vật, con vật",title:"Con gọi tên những gì trong tranh",
+   hand:"Bấm ▶ để máy hỏi, bố mẹ chỉ lần lượt vào từng hình, con nói tên bằng tiếng Anh.",
+   tip:"Gọi tên đồ vật quanh nhà bằng tiếng Anh; chơi trò “What’s this?” với thẻ tranh.",
+   qs:[{pic:[E("🐱"),E("🍎"),E("🚗"),E("🐦")],say:"What's this?",label:"What’s this?",ans:"cat, apple, car, bird (It’s a cat. It’s an apple. It’s a car. It’s a bird.)"}],
+   opts:["Con nói đúng cả 4 tên ngay, không cần nhắc","Con nói đúng 2–3 tên, hoặc phải nhắc chữ đầu","Con nói đúng 0–1 tên"]},
+  {type:"rate",area:"Trả lời câu hỏi về tranh",title:"Con trả lời câu hỏi về tranh",
+   hand:"Bấm ▶ từng câu, con nhìn tranh và trả lời bằng một từ hoặc câu ngắn.",
+   tip:"Tập trả lời câu hỏi How many, What colour, Is it… khi xem tranh truyện.",
+   qs:[{pic:[E("🍎"),E("🍎"),E("🍎")],say:"How many apples?",label:"How many apples?",ans:"Three. / There are three apples."},
+       {pic:[OBJ("ball",C.blue)],say:"What colour is the ball?",label:"What colour is the ball?",ans:"Blue. / It’s blue."},
+       {pic:[E("🐶")],say:"Is it a cat?",label:"Is it a cat?",ans:"No. / No, it isn’t. It’s a dog."}],
+   opts:["Con trả lời đúng cả 3 câu ngay, không cần nghe lại hay gợi ý","Con đúng 2 câu, hoặc phải nghe lại, gợi ý","Con đúng 1 câu hoặc chưa trả lời được"]},
+  {type:"rate",area:"Hỏi đáp về bản thân",title:"Con trả lời câu hỏi về bản thân",
+   hand:"Bấm ▶ từng câu, con trả lời trực tiếp.",
+   tip:"Luyện mẫu hỏi đáp về tên, tuổi, sở thích mỗi ngày vài phút cho thành phản xạ.",
+   qs:[{say:"What's your name?",label:"What’s your name?",ans:"Ví dụ: My name is Bông. / I’m Bông."},
+       {say:"How old are you?",label:"How old are you?",ans:"Ví dụ: I’m seven. / I’m seven years old."},
+       {say:"What's your favourite colour?",label:"What’s your favourite colour?",ans:"Ví dụ: Pink. / My favourite colour is pink."}],
+   opts:["Con trả lời đúng cả 3 câu ngay, không cần nghe lại hay gợi ý","Con đúng 2 câu, hoặc cần nghe lại, gợi ý","Con đúng 1 câu hoặc chưa trả lời được"]}
+ ]},
+ R:{items:[
+  {type:"choice",area:"Đọc từ và nhận ra tranh",title:"Nhìn tranh, đọc từ: đúng hay sai?",
+   hand:"Đưa máy cho con. Con tự đọc từ và chạm ✓ nếu đúng với tranh, ✗ nếu sai. Bố mẹ không đọc giúp.",
+   tip:"Học phonics và đọc từ đơn có tranh; chơi ghép thẻ chữ với thẻ tranh.",
+   words:["✓","✗"],
+   prompts:[{pic:[E("🐱")],text:"cat",ans:0},{pic:[E("🐟")],text:"bird",ans:1},{pic:[E("🍎")],text:"apple",ans:0},{pic:[E("⚽")],text:"car",ans:1},{pic:[E("🐶")],text:"dog",ans:0},{pic:[E("🐦")],text:"fish",ans:1},{pic:[E("📖")],text:"book",ans:0},{pic:[E("🚗")],text:"cake",ans:1}]},
+  {type:"choice",area:"Đọc câu ngắn",title:"Đọc câu: Yes hay No?",
+   hand:"Con tự đọc câu, nhìn tranh và chạm Yes hoặc No.",
+   tip:"Đọc câu ngắn có tranh (There is…, I can see…, It has got…) rồi hỏi đúng hay sai.",
+   words:["Yes","No"],
+   prompts:[{pic:[E("🐱"),E("🐱"),E("🐱")],text:"There are two cats.",ans:1},{pic:[SC("grass",[{e:"🐕",x:42,y:58,s:2.4},{e:"⚽",x:74,y:80,s:1.3}])],text:"The dog has got a ball.",ans:0},
+            {pic:[SC("water",[{e:"🐟",x:50,y:72,s:2.2}])],text:"The fish is in the water.",ans:0},{pic:[E("🍌")],text:"I can see an apple.",ans:1},{pic:[E("🍎"),E("🍎"),E("🍎"),E("🍎")],text:"I can see four apples.",ans:0},{pic:[E("🐦")],text:"This is a fish.",ans:1}]},
+  {type:"choice",area:"Chọn từ điền vào câu",title:"Đọc câu và chọn từ đúng",
+   hand:"Con nhìn tranh, đọc câu và chạm vào từ còn thiếu.",
+   tip:"Luyện phân biệt các từ có chữ đầu giống nhau; đọc câu có chỗ trống và chọn từ.",
+   prompts:[{pic:[E("🐟")],text:"This is a ___.",opts:["fox","fish","fan"],ans:1},{pic:[E("🚗")],text:"It’s a ___.",opts:["cat","cake","car"],ans:2},
+            {pic:[E("🦒")],text:"I can see a ___.",opts:["giraffe","garden","guitar"],ans:0},{pic:[E("📚")],text:"These are ___.",opts:["boxes","books","bags"],ans:1}]}
+ ]},
+ W:{items:[
+  {type:"spell",area:"Ghép chữ cái thành từ",title:"Ghép chữ cái thành từ",
+   hand:"Con nhìn tranh và chạm các chữ cái theo đúng thứ tự.",
+   tip:"Tập đánh vần các từ ngắn; chơi xếp chữ cái nam châm thành từ.",
+   prompts:[{pic:[E("🐱")],letters:["t","a","c"],ans:"cat"},{pic:[E("🐶")],letters:["g","o","d"],ans:"dog"},{pic:[E("🐟")],letters:["s","i","h","f"],ans:"fish"},{pic:[E("⚽")],letters:["l","b","a","l"],ans:"ball"}]},
+  {type:"type",area:"Viết từ dưới tranh",title:"Viết tên của hình",
+   hand:"Con tự gõ từ, hoặc con viết ra giấy rồi bố mẹ gõ lại đúng từng chữ con viết.",
+   tip:"Tập viết từ dưới tranh, chú ý chính tả; viết lại từ vừa học sau mỗi buổi.",
+   prompts:[{pic:[E("🍎")],text:"",ans:["apple"]},{pic:[E("🐦")],text:"",ans:["bird"]},{pic:[E("📖")],text:"",ans:["book"]}]},
+  {type:"type",area:"Trả lời bằng một từ",title:"Đọc câu hỏi và viết một từ trả lời",
+   hand:"Con đọc câu hỏi, nhìn tranh và viết một từ trả lời.",
+   tip:"Tập đọc câu hỏi ngắn và viết câu trả lời một từ: số, màu, tên đồ vật.",
+   prompts:[{pic:[E("🐟"),E("🐟"),E("🐟")],text:"How many fish?",ans:["three","3"]},{pic:[OBJ("ball",C.blue)],text:"What colour is the ball?",ans:["blue"]},{pic:[E("🐱")],text:"What is it?",ans:["cat"]}]}
+ ]}
+},
+A1:{
+ L:{items:[
+  {type:"choice",listen:true,area:"Hoạt động hằng ngày",title:"Nghe câu và chạm vào đúng hình",
+   hand:"Đưa máy cho con. Bấm ▶ để con nghe, con chạm vào hình đúng. Mỗi lượt nghe tối đa 2 lần.",
+   board:[SC("water",[{e:"🏊‍♀️",x:50,y:62,s:2.5}]),SC("road",[{e:"🚴‍♀️",x:50,y:60,s:2.7}]),
+          SC("water",[{e:"👴",x:28,y:34,s:2.1},{e:"🎣",x:62,y:38,s:1.9},{e:"🐟",x:72,y:80,s:1.2}]),
+          SC("grass",[{e:"🧒",x:26,y:54,s:1.9},{e:"👦",x:74,y:54,s:1.9},{e:"⚽",x:50,y:82,s:1.2},{e:"🌳",x:86,y:22,s:1.3}]),
+          SC("room",[{e:"👨",x:40,y:44,s:2.2},{e:"🎸",x:68,y:64,s:1.9},{e:"🎵",x:82,y:20,s:1.1}]),
+          SC("night",[{e:"👶",x:44,y:60,s:2.4},{e:"💤",x:74,y:30,s:1.4},{e:"🌙",x:18,y:20,s:1.1}]),
+          SC("kitchen",[{e:"👨",x:34,y:42,s:2.2},{e:"🍳",x:66,y:66,s:1.9},{e:"♨️",x:68,y:30,s:1.1}]),
+          SC("room",[{e:"👧",x:38,y:44,s:2.2},{e:"📖",x:66,y:68,s:1.7}])],
+   prompts:[{say:"She is riding a bike.",ans:1},{say:"He is cooking breakfast.",ans:6},{say:"They are playing football in the park.",ans:3},{say:"My grandpa likes fishing.",ans:2},{say:"The baby is sleeping.",ans:5}]},
+  {type:"choice",listen:true,area:"Nghe giờ",title:"Nghe và chạm vào đúng giờ",
+   hand:"Bấm ▶ để con nghe giờ, con chạm vào đồng hồ đúng.",
+   board:[CLK(3,0),CLK(3,30),CLK(7,0),CLK(7,30),CLK(10,0),CLK(10,30),CLK(12,0),CLK(1,30)],
+   prompts:[{say:"It's half past seven.",ans:3},{say:"It's three o'clock.",ans:0},{say:"School starts at half past one.",ans:7},{say:"I go to bed at ten o'clock.",ans:4}]},
+  {type:"mcq",listen:true,area:"Nghe đoạn nói ngắn",title:"Nghe Tom kể về ngày Chủ nhật",
+   hand:"Bấm ▶ để nghe đoạn Tom kể (tối đa 2 lần), rồi con trả lời từng câu hỏi. Bố mẹ có thể đọc câu hỏi tiếng Việt cho con.",
+   say:"Hi, I'm Tom. On Sunday, I go to the park with my brother. We play football there. My brother is ten. After that, we eat ice cream.",
+   prompts:[{q:"Tom đi công viên vào hôm nào?",opts:["Saturday","Sunday","Monday"],ans:1},
+            {q:"Hai anh em chơi gì?",opts:["tennis","football","basketball"],ans:1},
+            {q:"Anh của Tom bao nhiêu tuổi?",opts:["eight","nine","ten"],ans:2},
+            {q:"Sau đó hai anh em ăn gì?",opts:["cake","ice cream","pizza"],ans:1}]}
+ ]},
+ S:{items:[
+  {type:"rate",area:"Tả hoạt động trong tranh",title:"Con nói mỗi người trong tranh đang làm gì",
+   hand:"Bấm ▶ từng câu, con nhìn tranh và trả lời bằng một câu đầy đủ.",
+   qs:[{pic:[SC("water",[{e:"🏊‍♀️",x:50,y:62,s:2.6}])],say:"What is she doing?",label:"What is she doing?",ans:"She is swimming."},
+       {pic:[SC("kitchen",[{e:"👨",x:34,y:42,s:2.3},{e:"🍳",x:66,y:66,s:2},{e:"♨️",x:68,y:30,s:1.1}])],say:"What is he doing?",label:"What is he doing?",ans:"He is cooking."},
+       {pic:[SC("road",[{e:"🚴‍♂️",x:50,y:62,s:2.6}])],say:"What is he doing?",label:"What is he doing?",ans:"He is riding a bike."}],
+   opts:["Con nói đúng cả 3 câu, đủ chủ ngữ + is/are + động từ -ing, không cần gợi ý","Con nói đúng ý nhưng còn cụt (swimming), hoặc cần gợi ý","Con chưa nói được"]},
+  {type:"rate",area:"Nói về thói quen hằng ngày",title:"Con nói câu hoàn chỉnh về thói quen hằng ngày",
+   hand:"Bấm ▶ từng câu hỏi; con trả lời bằng ít nhất một câu đầy đủ.",
+   qs:[{say:"What do you do after school?",label:"What do you do after school?",ans:"Ví dụ: I do my homework. Then I play football with my friends."},
+       {say:"What is your mum doing now?",label:"What is your mum doing now?",ans:"Ví dụ: She is cooking dinner. / She is working."},
+       {say:"What do you like eating for breakfast?",label:"What do you like eating for breakfast?",ans:"Ví dụ: I like eating bread and eggs."}],
+   opts:["Con trả lời cả 3 câu bằng câu đầy đủ, đúng ngữ pháp cơ bản, không cần gợi ý","Con trả lời được nhưng còn cụt, hoặc cần gợi ý","Con chưa trả lời được"]},
+  {type:"rate",strip:true,area:"Kể chuyện theo tranh",title:"Con kể câu chuyện theo 4 bức tranh",
+   hand:"Bấm ▶ để nghe yêu cầu. Con nhìn lần lượt 4 tranh và kể, mỗi tranh ít nhất một câu.",
+   qs:[{pic:[SC("grass",[{e:"🐕",x:40,y:62,s:2.4},{e:"🦴",x:74,y:80,s:1.4}])],say:"Look at the pictures. Tell me the story.",label:"Tranh 1"},
+       {pic:[SC("grass",[{e:"🐕",x:28,y:64,s:2.2},{e:"❗",x:30,y:24,s:1.2},{e:"🐈",x:76,y:66,s:1.8}])],label:"Tranh 2"},
+       {pic:[SC("grass",[{e:"🌳",x:62,y:46,s:3.6},{e:"🐈",x:66,y:22,s:1.3},{e:"🐕",x:22,y:76,s:1.8}])],label:"Tranh 3"},
+       {pic:[SC("grass",[{e:"🌳",x:66,y:46,s:3.6},{e:"🐈",x:70,y:22,s:1.2},{e:"🐕",x:28,y:72,s:2},{e:"😢",x:28,y:30,s:1.1}])],label:"Tranh 4"}],
+   model:"The dog is eating a bone. Then it sees a cat. The cat runs up a tree. The dog can’t catch the cat, so it is sad.",
+   opts:["Con kể đủ cả 4 tranh, mỗi tranh một câu đầy đủ, không cần gợi ý","Con kể được 2–3 tranh, hoặc có tranh chỉ nói từng từ","Con chưa kể được"]}
+ ]},
+ R:{items:[
+  {type:"choice",area:"Đọc câu tả tranh",title:"Đọc câu: Yes hay No?",
+   hand:"Con tự đọc câu, nhìn tranh và chạm Yes hoặc No.",
+   words:["Yes","No"],
+   prompts:[{pic:[SC("road",[{e:"🚴‍♂️",x:50,y:60,s:2.6}])],text:"The man is riding a bike.",ans:0},{pic:[SC("room",[{e:"👧",x:38,y:44,s:2.2},{e:"📖",x:66,y:68,s:1.7}])],text:"The girl is swimming.",ans:1},
+            {pic:[E("🍌"),E("🍌"),E("🍌"),E("🍌")],text:"There are five bananas.",ans:1},{pic:[E("🐘")],text:"This animal is very big and grey.",ans:0},
+            {pic:[SC("storm",[{e:"🌧️",x:28,y:20,s:1.4},{e:"☔",x:56,y:42,s:2},{e:"👧",x:56,y:74,s:1.7}])],text:"It’s raining, so she’s got an umbrella.",ans:0},{pic:[E("🦒")],text:"This animal has got a short neck.",ans:1}]},
+  {type:"mcq",area:"Đọc hiểu đoạn ngắn",title:"Đọc đoạn văn về Anna và trả lời",
+   hand:"Con tự đọc đoạn văn rồi chọn câu trả lời đúng. Bố mẹ không đọc giúp.",
+   text:"My name is Anna. I live in a small house with my mum, my dad and my little brother, Sam. We have got a white cat. Her name is Snowy. Snowy sleeps on my bed every night. On Saturdays, I help my dad in the garden and Sam plays with Snowy.",
+   prompts:[{q:"Who is Sam?",opts:["Anna’s dad","Anna’s brother","Anna’s cat"],ans:1},
+            {q:"What colour is Snowy?",opts:["black","white","grey"],ans:1},
+            {q:"Where does Snowy sleep?",opts:["in the garden","on Anna’s bed","in a box"],ans:1},
+            {q:"What does Anna do on Saturdays?",opts:["She plays with Snowy.","She helps her dad.","She goes to school."],ans:1}]},
+  {type:"choice",area:"Ngữ pháp trong câu",title:"Đọc câu và chọn từ đúng",
+   hand:"Con đọc câu và chạm vào từ đúng để điền vào chỗ trống.",
+   prompts:[{text:"She ___ playing tennis now.",opts:["is","are","am"],ans:0},{text:"There ___ three dogs in the park.",opts:["is","are","be"],ans:1},
+            {text:"Tom is ___ than his sister.",opts:["tall","taller","tallest"],ans:1},{text:"We ___ go to school on Sundays.",opts:["doesn’t","don’t","isn’t"],ans:1}]}
+ ]},
+ W:{items:[
+  {type:"type",area:"Viết từ vựng",title:"Viết tên của hình",
+   hand:"Con tự gõ từ, hoặc viết ra giấy rồi bố mẹ gõ lại đúng từng chữ con viết.",
+   prompts:[{pic:[E("🦁")],text:"",ans:["lion"]},{pic:[E("🌙")],text:"",ans:["moon"]},{pic:[E("🐄")],text:"",ans:["cow"]},{pic:[E("👕")],text:"",ans:["t-shirt","tshirt","t shirt","shirt"]}]},
+  {type:"order",area:"Xếp từ thành câu",title:"Xếp các từ thành câu đúng",
+   hand:"Con chạm các từ theo đúng thứ tự để tạo thành câu.",
+   prompts:[{words:["likes","My","sister","milk"],ans:["My sister likes milk"]},{words:["is","He","football","playing"],ans:["He is playing football"]},
+            {words:["do","Where","live","you"],ans:["Where do you live"]},{words:["can’t","I","swim","fast"],ans:["I can’t swim fast"]}]},
+  {type:"rate",area:"Viết câu ngắn",title:"Con viết 3 câu về con vật mình thích",
+   hand:"Nhờ con viết ra giấy 3 câu về con vật mình thích. Ví dụ đạt: I like dogs. My dog is big. It can run fast.",
+   opts:["Con tự viết đủ 3 câu đúng cấu trúc, phần lớn từ đúng chính tả, không cần gợi ý","Con viết 1–2 câu hoặc cần gợi ý nhiều","Con chưa viết được câu"]}
+ ]}
+},
+A2:{
+ L:{items:[
+  {type:"choice",listen:true,area:"Nghe câu có thông tin chi tiết",title:"Nghe và chạm vào hình phù hợp",
+   hand:"Bấm ▶ để nghe một câu, con chạm vào hình hợp với câu đó.",
+   board:[SC("storm",[{e:"🌧️",x:50,y:26,s:2},{e:"☔",x:50,y:70,s:1.9}]),
+          SC("beach",[{e:"☀️",x:78,y:18,s:1.7},{e:"⛱️",x:40,y:66,s:1.9}]),
+          SC("snownight",[{e:"🌙",x:18,y:16,s:1.1},{e:"❄️",x:48,y:20,s:1.1},{e:"❄️",x:78,y:30,s:.9},{e:"☃️",x:62,y:68,s:2},{e:"🏠",x:24,y:66,s:1.6}]),
+          SC("grass",[{e:"🌬️",x:26,y:28,s:1.9},{e:"🌳",x:70,y:46,s:2.6},{e:"🍃",x:48,y:42,s:1},{e:"🍃",x:88,y:24,s:.9}]),
+          SC("room",[{e:"🥱",x:44,y:44,s:2.5},{e:"🛏️",x:72,y:80,s:1.5}]),
+          SC("room",[{e:"🤒",x:44,y:46,s:2.5},{e:"🌡️",x:76,y:40,s:1.4}]),
+          SC("night",[{e:"😨",x:34,y:54,s:2.3},{e:"👻",x:74,y:40,s:1.8}]),
+          SC("road",[{e:"😠",x:30,y:36,s:2.1},{e:"🚲",x:64,y:72,s:1.9},{e:"💥",x:76,y:56,s:1.1}])],
+   prompts:[{say:"It was so cold that it snowed all night.",ans:2},{say:"I didn't sleep well, so I'm really tired today.",ans:4},
+            {say:"Be careful, it's very windy outside.",ans:3},{say:"He was angry because someone broke his bike.",ans:7},{say:"She can't come to school because she's got a temperature.",ans:5}]},
+  {type:"mcq",listen:true,area:"Nghe đoạn kể quá khứ",title:"Nghe chuyện của Lucy",
+   hand:"Bấm ▶ để nghe đoạn kể (tối đa 2 lần), rồi con trả lời từng câu.",
+   say:"Yesterday, Lucy got up at seven o'clock. She went to school by bus, because it was raining. After school, she visited her grandmother, and they made a cake together.",
+   prompts:[{q:"Lucy thức dậy lúc mấy giờ?",opts:["six o’clock","seven o’clock","eight o’clock"],ans:1},
+            {q:"Lucy đi học bằng gì?",opts:["by car","by bus","on foot"],ans:1},
+            {q:"Vì sao Lucy đi như vậy?",opts:["It was raining.","She was late.","Her bike was broken."],ans:0},
+            {q:"Sau giờ học, Lucy và bà làm gì?",opts:["made a cake","went shopping","watched TV"],ans:0}]},
+  {type:"mcq",listen:true,area:"Nghe tin nhắn lấy thông tin",title:"Nghe tin nhắn của câu lạc bộ bơi",
+   hand:"Bấm ▶ để nghe tin nhắn thoại (tối đa 2 lần), rồi con chọn thông tin đúng.",
+   say:"Hello Sam, it's Mrs Brown from the swimming club. Next week, the lesson is on Thursday, not Tuesday. It starts at a quarter to five. Please bring your own towel, and some money for a drink. It's two pounds fifty. See you then!",
+   prompts:[{q:"Buổi học bơi tuần sau vào thứ mấy?",opts:["Tuesday","Thursday","Saturday"],ans:1},
+            {q:"Buổi học bắt đầu lúc mấy giờ?",opts:["4:15","4:45","5:15"],ans:1},
+            {q:"Sam cần mang theo gì?",opts:["a towel","a swimming hat","a sandwich"],ans:0},
+            {q:"Sam cần mang bao nhiêu tiền?",opts:["£2.15","£2.50","£5.20"],ans:1}]}
+ ]},
+ S:{items:[
+  {type:"rate",area:"Kể việc đã làm",title:"Con kể việc đã làm và giải thích lý do",
+   hand:"Bấm ▶ từng câu, con trả lời bằng 2–3 câu liên tiếp, dùng thì quá khứ.",
+   qs:[{say:"What did you do last weekend?",label:"What did you do last weekend?",ans:"Ví dụ: Last weekend I visited my grandparents. We cooked lunch together, and then I played with my cousins."},
+       {say:"Which place do you like best? Why?",label:"Which place do you like best? Why?",ans:"Ví dụ: I like the beach best because I can swim and play in the sand."}],
+   opts:["Con kể liền mạch 2–3 câu, dùng đúng thì quá khứ, có lý do (because)","Con kể được nhưng ngắt quãng, cần gợi ý","Con chưa kể được"]},
+  {type:"rate",area:"Nói về kế hoạch và mong muốn",title:"Con nói về bạn bè và kế hoạch",
+   hand:"Bấm ▶ từng câu; con trả lời mỗi câu ít nhất 2 câu.",
+   qs:[{say:"Tell me about your best friend. What does he or she look like?",label:"Tell me about your best friend. What does he or she look like?",ans:"Ví dụ: My best friend is Minh. He is tall and he has got short black hair. He wears glasses."},
+       {say:"What are you going to do next summer?",label:"What are you going to do next summer?",ans:"Ví dụ: I’m going to visit Da Nang with my family. We’re going to swim in the sea."},
+       {say:"What would you like to be when you grow up? Why?",label:"What would you like to be when you grow up? Why?",ans:"Ví dụ: I’d like to be a doctor because I want to help sick people."}],
+   opts:["Con trả lời đủ 3 câu, mỗi câu từ 2 câu trở lên, dùng đúng going to, would like","Con trả lời được 1–2 câu, hoặc câu còn ngắn, sai thì nhiều","Con chưa trả lời được"]},
+  {type:"rate",strip:true,area:"Kể chuyện theo tranh",title:"Con kể chuyện theo tranh bằng thì quá khứ",
+   hand:"Bấm ▶ để nghe yêu cầu. Con kể câu chuyện theo 4 tranh, bắt đầu bằng: Last Sunday…",
+   qs:[{pic:[SC("road",[{e:"👨‍👩‍👧",x:36,y:38,s:1.5},{e:"🚗",x:36,y:76,s:2.2},{e:"🏖️",x:80,y:40,s:1.6}])],say:"Look at the pictures and tell me the story. Begin with: Last Sunday.",label:"Tranh 1"},
+       {pic:[SC("beach",[{e:"☀️",x:82,y:15,s:1.5},{e:"🏊",x:34,y:52,s:1.8},{e:"🏊‍♀️",x:64,y:54,s:1.6}])],label:"Tranh 2"},
+       {pic:[SC("storm",[{e:"⛈️",x:50,y:22,s:2},{e:"🏃",x:34,y:72,s:1.8},{e:"🏃‍♀️",x:64,y:72,s:1.6}])],label:"Tranh 3"},
+       {pic:[SC("room",[{e:"👨‍👩‍👧",x:38,y:44,s:2},{e:"🍕",x:72,y:76,s:1.6}])],label:"Tranh 4"}],
+   model:"Last Sunday, the family went to the beach by car. It was sunny, so they swam in the sea. Then a storm came, and they ran back to the car. When they got home, they ate pizza together.",
+   opts:["Con kể đủ 4 tranh, dùng thì quá khứ và từ nối (then, so)","Con kể được 2–3 tranh, hoặc lẫn hiện tại và quá khứ","Con chưa kể được"]}
+ ]},
+ R:{items:[
+  {type:"mcq",area:"Đọc truyện ngắn",title:"Đọc truyện của Ben và trả lời",
+   hand:"Con tự đọc truyện rồi chọn câu trả lời đúng.",
+   text:"Last summer, Ben went to the beach with his family. On the first day it was sunny, so they swam in the sea. On the second day it was windy, and Ben’s hat flew into the water. His sister caught it with a long stick.",
+   prompts:[{q:"Who did Ben go to the beach with?",opts:["his friends","his family","his class"],ans:1},
+            {q:"What was the weather like on the first day?",opts:["sunny","windy","rainy"],ans:0},
+            {q:"Why did Ben lose his hat?",opts:["It was windy.","He threw it.","A dog took it."],ans:0},
+            {q:"Who got the hat back?",opts:["Ben","his father","his sister"],ans:2}]},
+  {type:"mcq",area:"Đọc thông báo, tin nhắn",title:"Đọc thông báo: câu nào đúng?",
+   hand:"Con đọc từng thông báo hoặc tin nhắn, rồi chọn câu có cùng ý nghĩa.",
+   prompts:[{text:"LIBRARY: Please return books by Friday. Late books cost 50p a day.",q:"What does it say?",opts:["You must pay if your book is late.","The library is closed on Friday.","You can buy books for 50p."],ans:0},
+            {text:"Mia, I’m at the dentist. Your lunch is in the fridge. Back at 3. – Mum",q:"What does it say?",opts:["Mum will make lunch at 3.","Mia should get her lunch from the fridge.","Mia has to go to the dentist."],ans:1},
+            {text:"SWIMMING POOL: Children under 8 must swim with an adult.",q:"What does it say?",opts:["Adults cannot use this pool.","Young children need an adult with them.","Children must be 8 to come in."],ans:1},
+            {text:"Football practice is on Wednesday this week because of the school concert.",q:"What does it say?",opts:["There is no football practice this week.","The concert is on Wednesday.","This week, practice is on a different day."],ans:2}]},
+  {type:"choice",area:"Ngữ pháp A2",title:"Đọc câu và chọn từ đúng",
+   hand:"Con đọc câu và chạm vào phương án đúng.",
+   prompts:[{text:"I ___ to Da Nang last summer.",opts:["go","went","goes"],ans:1},{text:"She has lived here ___ 2020.",opts:["for","since","from"],ans:1},
+            {text:"This is the ___ film I have ever seen.",opts:["better","best","good"],ans:1},{text:"If it rains, we ___ stay at home.",opts:["will","would","are"],ans:0},
+            {text:"He was watching TV when the phone ___.",opts:["ring","was ringing","rang"],ans:2}]}
+ ]},
+ W:{items:[
+  {type:"type",area:"Chia động từ, so sánh",title:"Viết dạng đúng của từ trong ngoặc",
+   hand:"Con đọc câu và gõ một từ đúng vào chỗ trống.",
+   prompts:[{text:"Yesterday I ___ a new bag. (buy)",ans:["bought"]},{text:"She is ___ at maths than me. (good)",ans:["better"]},
+            {text:"We have ___ that film twice. (see)",ans:["seen"]},{text:"My brother ___ to music every evening. (listen)",ans:["listens"]}]},
+  {type:"order",area:"Xếp từ thành câu",title:"Xếp các từ thành câu đúng",
+   hand:"Con chạm các từ theo đúng thứ tự để tạo thành câu.",
+   prompts:[{words:["went","I","the","to","yesterday","cinema"],ans:["I went to the cinema yesterday","Yesterday I went to the cinema"]},
+            {words:["are","going","What","you","to","do"],ans:["What are you going to do"]},
+            {words:["never","has","She","been","to","London"],ans:["She has never been to London"]},
+            {words:["because","stayed","home","I","was","ill","I"],ans:["I stayed home because I was ill","Because I was ill I stayed home"]}]},
+  {type:"rate",area:"Viết tin nhắn ngắn",title:"Con viết email ngắn cho bạn",
+   hand:"Nhờ con viết ra giấy hoặc gõ vào ghi chú, khoảng 25–35 từ. Đọc xong rồi chọn mức phù hợp.",
+   qs:[{read:"Write an email to your friend Sam (25–35 words). Invite Sam to the cinema this weekend. Say: which film, where to meet, what time."}],
+   opts:["Con tự viết đủ 3 ý, 25 từ trở lên, câu đúng cấu trúc, lỗi rất ít","Con viết thiếu ý, hoặc nhiều lỗi khiến khó hiểu","Con chưa viết được"]}
+ ]}
+},
+B1:{
+ L:{items:[
+  {type:"mcq",listen:true,area:"Nghe thông báo",title:"Nghe thông báo về chuyến tham quan",
+   hand:"Từ cấp B1, con có thể tự làm. Bấm ▶ để nghe (tối đa 2 lần), đọc câu hỏi tiếng Anh và chọn đáp án.",
+   say:"Good morning, everyone. Just a reminder about Friday's trip to the science museum. The coach will leave at half past eight, so please be at the school gate by twenty past. Don't bring a packed lunch this time, because the museum café is giving us a free meal. You will need a notebook, as there's a short quiz on the way back, and the winning team gets cinema tickets. If it rains, we'll still go, as most of the visit is indoors.",
+   prompts:[{q:"What time should students be at the school gate?",opts:["8.20","8.30","8.40"],ans:0},
+            {q:"What should students NOT bring?",opts:["a notebook","a packed lunch","a raincoat"],ans:1},
+            {q:"Why do students need a notebook?",opts:["to draw the exhibits","for a quiz","to write a report"],ans:1},
+            {q:"What will happen if it rains?",opts:["The trip will be cancelled.","The trip will still happen.","The trip will be shorter."],ans:1}]},
+  {type:"mcq",listen:true,dialog:true,area:"Nghe hội thoại",title:"Nghe Anna và Tom nói chuyện",
+   hand:"Bấm ▶ để nghe hội thoại giữa hai bạn (tối đa 2 lần), rồi trả lời câu hỏi.",
+   say:[[0,"Hi Tom, are you coming to the climbing club this Saturday?"],[1,"I'd love to, Anna, but I've got a football match in the morning."],
+        [0,"The club's open until six, so you could come after lunch."],[1,"Good idea. Is it expensive? I spent most of my money on new football boots."],
+        [0,"It's usually eight pounds, but members can bring a friend for half price."],[1,"Great. Then I'll come at two."]],
+   prompts:[{q:"Why can’t Tom go in the morning?",opts:["He has a football match.","He has to study.","He’s going shopping."],ans:0},
+            {q:"What time will Tom go to the club?",opts:["at 2 o’clock","at 6 o’clock","after dinner"],ans:0},
+            {q:"How much will Tom pay?",opts:["£8","£4","nothing"],ans:1},
+            {q:"What did Tom buy recently?",opts:["climbing shoes","football boots","a club ticket"],ans:1}]},
+  {type:"mcq",listen:true,area:"Nghe ý kiến, lý do",title:"Nghe ba đoạn ngắn và chọn ý đúng",
+   hand:"Mỗi câu có một đoạn nghe riêng. Bấm ▶ (tối đa 2 lần mỗi đoạn) rồi chọn đáp án.",
+   prompts:[{say:"I thought the film would be boring, but actually I couldn't stop watching. The ending was a bit disappointing, though.",q:"What does the speaker think of the film?",opts:["It was boring from start to finish.","It was mostly enjoyable.","The ending was the best part."],ans:1},
+            {say:"I usually cycle to school, but since they started the road works, I've been taking the bus. It takes longer, but it's safer.",q:"Why does the speaker take the bus now?",opts:["It’s faster.","The road is unsafe for cycling.","Her bike is broken."],ans:1},
+            {say:"Sorry I'm late! The train was on time, but I left my phone at home and had to go back for it.",q:"Why is the speaker late?",opts:["The train was delayed.","She forgot something.","She got lost."],ans:1}]}
+ ]},
+ S:{items:[
+  {type:"rate",area:"Trả lời câu hỏi cá nhân có mở rộng",title:"Con trả lời câu hỏi và mở rộng ý",
+   hand:"Bấm ▶ từng câu, con trả lời mỗi câu khoảng 3 câu, có lý do hoặc ví dụ. Nếu bố mẹ chưa tự tin đánh giá, có thể nhờ giáo viên nghe cùng.",
+   qs:[{say:"Tell me about your school. What do you like about it?",label:"Tell me about your school. What do you like about it?",ans:"Ví dụ: My school is quite big and it has a great library. I like it because the teachers are friendly, and there are lots of clubs after school, like basketball."},
+       {say:"What do you usually do at weekends?",label:"What do you usually do at weekends?",ans:"Ví dụ: I usually get up late on Saturdays. In the afternoon I meet my friends, and on Sundays I often visit my grandparents with my family."},
+       {say:"Tell me about a place you would like to visit in the future. Why?",label:"Tell me about a place you’d like to visit. Why?",ans:"Ví dụ: I’d love to visit Japan because I’m interested in its culture and food. I’d also like to see the cherry blossoms in spring."}],
+   opts:["Con nói trôi chảy, mỗi câu có lý do hoặc ví dụ, lỗi nhỏ không làm khó hiểu","Con trả lời được nhưng ngắn, hay ngập ngừng, cần gợi ý","Con chỉ nói được từ rời hoặc chưa trả lời được"]},
+  {type:"rate",area:"Tả ảnh",title:"Con tả bức ảnh trong khoảng 1 phút",
+   hand:"Bấm ▶ để nghe yêu cầu. Con nói liên tục khoảng 1 phút: ở đâu, ai, đang làm gì, cảm xúc ra sao.",
+   qs:[{pic:[SC("grass",[{e:"☀️",x:86,y:14,s:1.3},{e:"🌳",x:16,y:36,s:2.6},{e:"👨‍👩‍👧‍👦",x:52,y:56,s:2.2},{e:"🧺",x:76,y:80,s:1.3},{e:"🥪",x:56,y:86,s:1}])],say:"Look at the photo. Describe what you can see. Where are the people? What are they doing? How do they feel?",label:"Describe the photo."}],
+   model:"In this photo I can see a family having a picnic in a park. It looks like a sunny day. The parents are sitting on the grass with their two children, and there is a basket with some sandwiches. I think they are relaxing and enjoying the weekend. They look happy, maybe because they don’t often have time together.",
+   opts:["Con nói gần 1 phút, đủ ý, biết tả cả những thứ không chắc (maybe, it looks like)","Con nói được nhưng dưới 30 giây hoặc lặp ý nhiều","Con chưa tả được"]},
+  {type:"rate",area:"Thảo luận, đưa ý kiến",title:"Con thảo luận và chọn phương án tốt nhất",
+   hand:"Bấm ▶ để nghe tình huống. Con nói về từng ý tưởng, so sánh và chọn một. Bố mẹ có thể hỏi thêm: Why not the others?",
+   qs:[{pic:[SC("kitchen",[{e:"🧁",x:34,y:58,s:2},{e:"🍰",x:68,y:62,s:1.8}],"cake sale"),SC("grass",[{e:"🏃",x:36,y:58,s:2},{e:"🏅",x:72,y:32,s:1.4}],"sports day"),SC("night",[{e:"🎤",x:36,y:58,s:2},{e:"🎶",x:70,y:32,s:1.5}],"concert"),SC("room",[{e:"📚",x:40,y:62,s:2},{e:"🏷️",x:72,y:36,s:1.3}],"book sale")],
+        say:"Your class wants to raise money for the school library. Here are some ideas: a cake sale, a sports day, a concert, and a book sale. Talk about the ideas, and decide which one is best.",label:"Which idea is best for raising money?"}],
+   model:"A cake sale is easy to organise, but it might not make much money. A sports day is fun, but it needs a lot of planning. A book sale suits a library, although people might not want to buy old books. I think a concert is the best choice, because lots of parents would come and buy tickets.",
+   opts:["Con nói về nhiều ý tưởng, so sánh, đưa lý do và kết luận rõ","Con nêu được ý kiến nhưng ít lý do, hoặc cần gợi ý nhiều","Con chưa thảo luận được"]}
+ ]},
+ R:{items:[
+  {type:"mcq",area:"Đọc hiểu bài báo",title:"Đọc bài viết về khu vườn của Maya",
+   hand:"Con tự đọc bài rồi chọn đáp án đúng cho từng câu.",
+   text:"When fifteen-year-old Maya moved to a new city, she found it hard to make friends. Behind her apartment building there was an empty piece of land, full of rubbish. One weekend, she decided to clean it up on her own. At first, the neighbours just watched from their windows, but soon an old man from the third floor came down with a pair of gloves. “I used to be a farmer,” he said. “Let me show you what to plant.” Within two months, more than twenty people were helping. They grew tomatoes, beans and herbs, and shared everything they picked. Maya says the garden changed her life. “I came here feeling lonely,” she explains, “but now I know almost everyone in the building. The vegetables are nice, but the friendships are the real harvest.”",
+   prompts:[{q:"How did Maya feel when she first moved?",opts:["excited","lonely","angry"],ans:1},
+            {q:"What did the neighbours do at first?",opts:["They helped immediately.","They complained about the noise.","They only watched."],ans:2},
+            {q:"How did the old man help?",opts:["He gave her money.","He shared his farming knowledge.","He bought the land."],ans:1},
+            {q:"What does Maya think is the most important result?",opts:["the vegetables","the new friendships","a cleaner building"],ans:1}]},
+  {type:"choice",area:"Từ vựng, ngữ pháp B1",title:"Chọn từ đúng để hoàn thành câu",
+   hand:"Con đọc câu và chạm vào phương án đúng.",
+   prompts:[{text:"I’m not very good ___ remembering names.",opts:["in","at","on"],ans:1},{text:"Could you ___ me a favour?",opts:["make","do","give"],ans:1},
+            {text:"The concert was ___ because of the storm.",opts:["called off","put on","taken off"],ans:0},{text:"She ___ the piano since she was six.",opts:["is playing","has played","plays"],ans:1},
+            {text:"If I ___ more time, I would learn another language.",opts:["have","had","will have"],ans:1}]},
+  {type:"mcq",area:"Đọc tin nhắn, thông báo",title:"Đọc tin nhắn: ý chính là gì?",
+   hand:"Con đọc từng tin nhắn hoặc thông báo, rồi chọn câu đúng.",
+   prompts:[{text:"Hi Jo, the shop says the jacket you ordered is out of stock in blue until next month. They can send a black one now, or you can wait. Let me know by Friday. – Sam",q:"What does Jo need to do?",opts:["Pay for the jacket by Friday.","Choose between two options.","Go to the shop next month."],ans:1},
+            {text:"From Monday, the school canteen will close at 1.30 pm instead of 2 pm. Students with afternoon clubs may eat in the library.",q:"What does the notice say?",opts:["The canteen will be open longer.","Some students can have lunch in a different place.","The library is closing at 1.30."],ans:1},
+            {text:"Practice is still on even though it’s raining – we’ll use the sports hall. Bring indoor shoes, not football boots! – Coach",q:"What does the coach want?",opts:["Practice is cancelled because of the rain.","Players need different shoes today.","Players should bring football boots."],ans:1}]}
+ ]},
+ W:{items:[
+  {type:"type",area:"Điền một từ (giới từ, đại từ quan hệ)",title:"Điền MỘT từ vào chỗ trống",
+   hand:"Con đọc câu và gõ một từ phù hợp.",
+   prompts:[{text:"I’ve been learning English ___ five years.",ans:["for"]},{text:"She is the girl ___ won the competition.",ans:["who","that"]},
+            {text:"We were so tired ___ we went to bed early.",ans:["that"]},{text:"Could you tell me ___ the station is?",ans:["where"]}]},
+  {type:"type",area:"Cấu tạo từ",title:"Viết dạng đúng của từ trong ngoặc",
+   hand:"Con đọc câu và đổi từ trong ngoặc thành dạng đúng.",
+   prompts:[{text:"The film was really ___. (bore)",ans:["boring"]},{text:"He made a ___ to study harder. (decide)",ans:["decision"]},
+            {text:"Please drive ___. (care)",ans:["carefully"]},{text:"Her ___ surprised everyone. (succeed)",ans:["success"]}]},
+  {type:"rate",area:"Viết email khoảng 100 từ",title:"Con viết email khoảng 100 từ",
+   hand:"Con viết ra giấy hoặc gõ vào ghi chú trong khoảng 20 phút. Nếu bố mẹ chưa tự tin chấm, có thể gửi bài cho giáo viên rồi quay lại chọn mức.",
+   qs:[{read:"Your English friend Alex wrote: “I’m visiting your city next month for three days! What should I see? What food should I try? What’s the weather like then?” Write an email to Alex. Answer all three questions (about 100 words)."}],
+   opts:["Trả lời đủ 3 ý, khoảng 100 từ, dùng từ nối (because, so, however), lỗi nhỏ không làm khó hiểu","Thiếu ý hoặc quá ngắn, câu đơn giản lặp lại, có lỗi gây khó hiểu","Chưa viết được đoạn liền mạch"]}
+ ]}
+},
+B2:{
+ L:{items:[
+  {type:"mcq",listen:true,dialog:true,area:"Nghe phỏng vấn",title:"Nghe phỏng vấn nhà sáng lập trẻ",
+   hand:"Bấm ▶ để nghe phỏng vấn (tối đa 2 lần). Câu hỏi kiểm tra cả ý ngầm, không chỉ chi tiết.",
+   say:[[0,"You started your recycling app when you were only seventeen. Where did the idea come from?"],
+        [1,"Honestly, it came from frustration. Our school had recycling bins, but nobody used them properly, because the rules were so confusing. I wasn't trying to start a business. I just wanted my classmates to stop putting pizza boxes in the paper bin."],
+        [0,"And now the app is used in over two hundred schools. What's been the hardest part?"],
+        [1,"People assume it was the technology, but I had friends who could code. The real challenge was convincing adults to take a teenager seriously. Some head teachers wouldn't even reply to my emails, until a local newspaper wrote about us."]],
+   prompts:[{q:"What originally motivated Lena?",opts:["She wanted to make money.","She was annoyed by a problem at school.","A teacher asked her to help."],ans:1},
+            {q:"Why weren’t students recycling properly?",opts:["The bins were too far away.","The rules were unclear.","They didn’t care about the environment."],ans:1},
+            {q:"What does Lena say was the most difficult thing?",opts:["writing the code","being taken seriously","finding schools to join"],ans:1},
+            {q:"What changed some head teachers’ attitudes?",opts:["a newspaper article","an award","a recommendation from students"],ans:0}]},
+  {type:"mcq",listen:true,area:"Nghe thái độ, quan điểm",title:"Nghe ba đoạn ngắn: người nói nghĩ gì?",
+   hand:"Mỗi câu có một đoạn nghe riêng. Chú ý thái độ và mục đích của người nói.",
+   prompts:[{say:"I'd been looking forward to the trip for months, so when it got cancelled, I was gutted. Still, looking back, the extra week at home gave me time to finish my project, which I'd otherwise have rushed.",q:"How does the speaker feel now about the cancellation?",opts:["She is still very upset about it.","She sees that it had some advantages.","She never wanted to go on the trip."],ans:1},
+            {say:"Everyone told me the sequel would be a let-down, and to be fair, the plot is a bit predictable. But the acting is so strong that I hardly noticed.",q:"What is the speaker’s opinion of the film?",opts:["It was as disappointing as people said.","Its weaknesses were outweighed by the acting.","The story was the strongest part."],ans:1},
+            {say:"I'm not saying the new timetable is perfect, but complaining about it every day isn't going to change anything. Why don't we put our suggestions in writing and send them to the head?",q:"What is the speaker doing?",opts:["Defending the timetable completely.","Suggesting a practical next step.","Refusing to discuss the problem."],ans:1}]},
+  {type:"mcq",listen:true,area:"Nghe bài nói dài",title:"Nghe bài nói về giấc ngủ của thiếu niên",
+   hand:"Bấm ▶ để nghe (tối đa 2 lần), rồi trả lời câu hỏi.",
+   say:"Most teenagers need between eight and ten hours of sleep, yet surveys suggest that fewer than a third actually get that. It's tempting to blame phones, and screens certainly don't help, but there's a biological factor too. During adolescence, the body starts producing the sleep hormone melatonin later in the evening, which means teenagers genuinely aren't tired at ten o'clock. Some schools have experimented with starting classes an hour later, and the results were striking. Attendance went up, and students reported feeling less anxious, although exam results improved only slightly.",
+   prompts:[{q:"According to the speaker, how many teenagers get enough sleep?",opts:["more than half","fewer than a third","about ten percent"],ans:1},
+            {q:"What point does the speaker make about phones?",opts:["They are the main cause of the problem.","They are one factor, but not the only one.","They have no effect on sleep."],ans:1},
+            {q:"Why aren’t teenagers tired early in the evening?",opts:["They drink too much caffeine.","Their bodies release melatonin later.","They have too much homework."],ans:1},
+            {q:"What happened when schools started later?",opts:["Exam results improved dramatically.","Students felt less anxious.","Attendance fell."],ans:1}]}
+ ]},
+ S:{items:[
+  {type:"rate",area:"Trả lời câu hỏi quan điểm",title:"Con trả lời câu hỏi về quan điểm",
+   hand:"Bấm ▶ từng câu, con trả lời mỗi câu 30–40 giây. Nên nhờ giáo viên nghe cùng nếu bố mẹ chưa tự tin đánh giá.",
+   qs:[{say:"Do you think it's better to study alone or with friends? Why?",label:"Is it better to study alone or with friends? Why?",ans:"Ví dụ: It depends on the subject. For learning vocabulary, I prefer studying alone because I can concentrate. For maths, though, working with friends helps, since we can explain things to each other."},
+       {say:"How has technology changed the way young people spend their free time?",label:"How has technology changed the way young people spend their free time?",ans:"Ví dụ: Technology has made free time more convenient but less active. Many teenagers spend hours on social media instead of doing sport, although apps also help us learn new skills."},
+       {say:"If you could change one thing about your school, what would it be?",label:"If you could change one thing about your school, what would it be?",ans:"Ví dụ: I would make the school day start later, because many students are tired in the morning and can’t focus in the first lessons."}],
+   opts:["Con trả lời trôi chảy, lập luận rõ, từ vựng đa dạng, hiếm khi ngập ngừng","Con trả lời được nhưng ý đơn giản, lặp từ, ngập ngừng nhiều","Con khó duy trì câu trả lời quá vài câu"]},
+  {type:"rate",area:"So sánh hai ảnh",title:"Con so sánh hai bức ảnh trong 1 phút",
+   hand:"Bấm ▶ để nghe yêu cầu. Con nói liên tục khoảng 1 phút, so sánh chứ không tả từng ảnh riêng.",
+   qs:[{pic:[SC("night",[{e:"⛺",x:36,y:66,s:2.4},{e:"🔥",x:72,y:76,s:1.4},{e:"🌲",x:86,y:40,s:1.8},{e:"✨",x:24,y:18,s:1}],"Photo A"),SC("beach",[{e:"🏨",x:30,y:30,s:2.1},{e:"🏊",x:58,y:54,s:1.4},{e:"🍹",x:80,y:82,s:1.2}],"Photo B")],
+        say:"Here are two photos of people on holiday. Compare the photos, and say why you think the people chose these holidays. Which would you prefer?",label:"Compare the two holidays. Which would you prefer?"}],
+   model:"Both photos show people on holiday, but the holidays are very different. In the first photo, people are camping in a forest, whereas the second shows a hotel with a swimming pool by the sea. The campers probably wanted adventure and to be close to nature, while the people at the hotel may want comfort and relaxation. Personally, I’d prefer camping, because it feels more exciting, even though it’s less comfortable.",
+   opts:["Con so sánh rõ (whereas, while, both), suy đoán lý do, nói đủ 1 phút","Con chủ yếu tả từng ảnh, ít so sánh, dưới 1 phút","Con chưa làm được"]},
+  {type:"rate",area:"Thảo luận, tranh luận",title:"Con thảo luận một vấn đề hai chiều",
+   hand:"Bấm ▶ để nghe câu hỏi. Con nói khoảng 2 phút, nêu cả mặt lợi và hại rồi kết luận. Bố mẹ có thể phản biện để con trả lời thêm.",
+   qs:[{pic:[SC("room",[{e:"💵",x:50,y:55,s:2.4}],"money"),SC("kitchen",[{e:"🧑‍🍳",x:50,y:52,s:2.4}],"experience"),SC("room",[{e:"📚",x:42,y:60,s:2},{e:"⏰",x:72,y:32,s:1.4}],"time for study"),SC("storm",[{e:"😓",x:50,y:55,s:2.4}],"stress")],
+        say:"Some people say teenagers should have part-time jobs. Think about money, experience, time for study, and stress. What are the advantages and disadvantages?",label:"Should teenagers have part-time jobs?"}],
+   model:"On the one hand, a part-time job helps teenagers earn their own money and learn responsibility. It also gives them experience that could be useful for their future career. On the other hand, working can take time away from studying and may cause stress, especially before exams. Overall, I think a few hours at weekends is fine, but school should come first.",
+   opts:["Con nêu được hai chiều, phát triển ý, phản hồi khi bị hỏi lại","Con nêu được ý kiến nhưng một chiều, thiếu phát triển","Con chưa thảo luận được"]}
+ ]},
+ R:{items:[
+  {type:"mcq",area:"Đọc hiểu, suy luận",title:"Đọc bài viết về ‘đa nhiệm’ khi học",
+   hand:"Con tự đọc bài rồi trả lời. Câu hỏi kiểm tra cả ý ngầm và quan điểm người viết.",
+   text:"Many students proudly describe themselves as good at multitasking: they revise with music on, reply to messages and keep a video running in another tab. Research, however, paints a less flattering picture. What feels like doing several things at once is, in reality, the brain switching rapidly between tasks, and each switch carries a small cost. Individually these costs are tiny, but they add up, so a piece of homework that should take forty minutes can easily stretch to an hour and a half. More worryingly, information learned while distracted tends to be stored less deeply, which is why students sometimes feel they “knew it last night” but cannot recall it in the exam. This is not to say that all background noise is harmful. Instrumental music, for instance, seems to have little effect on most people, and some even find it helps them concentrate. The real problem is anything that demands a response – a notification, a conversation, a video with dialogue. The advice, then, is simple: rather than relying on willpower, put the phone in another room. Out of sight, it turns out, really is out of mind.",
+   prompts:[{q:"What does the writer say about multitasking?",opts:["It allows people to do several tasks at the same time.","It actually involves constant switching between tasks.","It is a skill that improves with practice."],ans:1},
+            {q:"Why might students forget what they studied?",opts:["They studied too late at night.","The information was not stored deeply.","They listened to music."],ans:1},
+            {q:"What is the writer’s view of instrumental music?",opts:["It is usually not a problem.","It always improves concentration.","It should be avoided."],ans:0},
+            {q:"What does the last sentence suggest?",opts:["Phones should be switched off completely.","Not seeing the phone reduces the temptation to use it.","Students should study in a different room."],ans:1}]},
+  {type:"choice",area:"Từ vựng, ngữ pháp B2",title:"Chọn phương án đúng",
+   hand:"Con đọc câu và chạm vào phương án đúng.",
+   prompts:[{text:"She’s always been very keen ___ photography.",opts:["in","on","at"],ans:1},{text:"The new rules will ___ effect next month.",opts:["take","make","get"],ans:0},
+            {text:"Despite ___ hard, he didn’t pass the test.",opts:["he studied","studying","to study"],ans:1},{text:"I’d rather you ___ tell anyone about this.",opts:["don’t","didn’t","won’t"],ans:1},
+            {text:"Hardly ___ arrived when it started to rain.",opts:["we had","had we","we have"],ans:1}]},
+  {type:"mcq",area:"Đọc giọng điệu, mục đích",title:"Đọc đoạn ngắn: người viết muốn nói gì?",
+   hand:"Con đọc từng đoạn và chọn ý đúng nhất.",
+   prompts:[{text:"The café’s new menu is certainly ambitious. Whether customers are ready to pay twelve dollars for a sandwich, however, remains to be seen.",q:"What does the reviewer suggest?",opts:["The sandwiches are too small.","The prices may be too high for customers.","The menu is not ambitious enough."],ans:1},
+            {text:"Students wishing to drop a subject must do so before the end of week three. After this, changes will only be considered in exceptional circumstances.",q:"What does the notice mean?",opts:["Students can never change subjects after week three.","Late changes are possible but unlikely.","Students must drop a subject in week three."],ans:1},
+            {text:"I appreciate you taking the time to send your proposal. While it raises some interesting points, we don’t feel it’s the right fit for us at the moment.",q:"What is the purpose of this email?",opts:["To accept the proposal.","To politely reject the proposal.","To ask for more information."],ans:1}]}
+ ]},
+ W:{items:[
+  {type:"type",area:"Cấu tạo từ nâng cao",title:"Viết dạng đúng của từ trong ngoặc",
+   hand:"Con đổi từ trong ngoặc thành dạng phù hợp với câu (có thể cần tiền tố, hậu tố).",
+   prompts:[{text:"Her ___ to help others is admirable. (willing)",ans:["willingness"]},{text:"The results were ___ disappointing. (surprise)",ans:["surprisingly"]},
+            {text:"The film was ___ long. (necessary)",ans:["unnecessarily"]},{text:"There is a lack of ___ about the new rules. (inform)",ans:["information"]}]},
+  {type:"type",area:"Điền từ (open cloze)",title:"Điền MỘT từ vào chỗ trống",
+   hand:"Con đọc câu và gõ một từ phù hợp.",
+   prompts:[{text:"___ the bad weather, the match went ahead.",ans:["despite"]},{text:"I’m not used ___ getting up so early.",ans:["to"]},
+            {text:"She talks as ___ she knew everything.",ans:["if","though"]},{text:"Not only ___ he late, but he also forgot his books.",ans:["was"]}]},
+  {type:"rate",area:"Viết bài luận",title:"Con viết bài luận 140–190 từ",
+   hand:"Con viết trong khoảng 40 phút. Nên gửi bài cho giáo viên chấm rồi quay lại chọn mức.",
+   qs:[{read:"Essay: “Students should be allowed to use their phones in class.” Do you agree? Write about: 1) learning, 2) distraction, 3) your own idea. (140–190 words)"}],
+   opts:["Đủ 3 ý, lập luận có ví dụ, đoạn văn mạch lạc, cấu trúc câu đa dạng","Đủ ý cơ bản nhưng lập luận mỏng, câu đơn giản, lỗi khá nhiều","Chưa viết được bài có bố cục"]}
+ ]}
+}};
+const ADVICE={
+ A1:{L:"Nghe đoạn ngắn có tình huống, tập bắt thông tin ai, ở đâu, khi nào, mấy giờ.",S:"Tập tả tranh bằng câu đầy đủ, nói về thói quen hằng ngày, kể chuỗi tranh 3–4 bức.",R:"Đọc truyện ngắn phân cấp, trả lời câu hỏi nội dung sau mỗi đoạn; ôn thì hiện tại đơn và tiếp diễn.",W:"Viết 2–3 câu theo tranh gợi ý; tập xếp câu đúng trật tự, chú ý chính tả."},
+ A2:{L:"Nghe đoạn kể và tin nhắn thoại dài hơn, luyện nghe chi tiết như giờ, giá tiền, lý do.",S:"Kể chuyện đã qua với từ nối first, then, because; nói về kế hoạch với going to.",R:"Đọc truyện, thông báo, tin nhắn ngắn; luyện tìm chi tiết và hiểu ý chính của biển báo.",W:"Viết email ngắn 25–35 từ đủ ý; ôn thì quá khứ, hiện tại hoàn thành, so sánh."},
+ B1:{L:"Nghe thông báo, hội thoại 2–3 phút; tập bắt ý chính, thái độ và lý do của người nói.",S:"Tập tả ảnh 1 phút, thảo luận chọn phương án và đưa lý do; mở rộng câu trả lời bằng ví dụ.",R:"Đọc bài báo, truyện cho thiếu niên khoảng 300 từ; luyện tìm ý chính, ý định người viết.",W:"Viết email và truyện khoảng 100 từ, dùng từ nối, mệnh đề quan hệ, câu điều kiện, cấu tạo từ."},
+ B2:{L:"Nghe phỏng vấn, bài nói dài; luyện suy luận quan điểm, thái độ và ý ngầm của người nói.",S:"Luyện so sánh hai ảnh, tranh luận hai chiều có lập luận, dùng từ vựng đa dạng.",R:"Đọc bài luận, bài báo dài; luyện đoán nghĩa, nhận ra giọng điệu và cấu trúc lập luận.",W:"Viết bài luận, review 140–190 từ; luyện cấu tạo từ, collocation, đảo ngữ, câu bị động."}
+};
+const BEYOND={L:"Nghe podcast, bài giảng, tin tức thực tế; luyện ghi chú ý chính.",S:"Thuyết trình, tranh biện; dùng thành ngữ và cách diễn đạt tự nhiên.",R:"Đọc báo, sách nguyên bản; luyện tóm tắt và phân tích quan điểm.",W:"Viết bài luận học thuật, báo cáo; luyện văn phong trang trọng."};
+/* QUY TẮC CHẤM (ẩn) – bản chặt chẽ
+   1. Phần máy chấm có trừ đoán mò: tỉ lệ thực = (tỉ lệ đúng − tỉ lệ đoán trúng) ÷ (1 − tỉ lệ đoán trúng),
+      tỉ lệ đoán trúng = 1/số phương án (gõ chữ, ghép chữ, xếp câu = 0).
+      Tỉ lệ thực ≥ 0,8 → 2; ≥ 0,5 → 1; còn lại 0. "Con chưa biết" tính là sai. Nghe quá 2 lần → tối đa 1.
+   2. Bố mẹ đánh giá: mức 2 chỉ khi đúng hoàn toàn, không cần nhắc.
+   3. Ô (cấp × kỹ năng) chỉ có kết quả khi làm xong cả 3 phần; phần bỏ qua tính 0.
+      Đạt (2): tổng ≥ 5/6 và không phần nào 0. Đang hình thành (1): tổng ≥ 3/6. Còn lại 0.
+   4. Mức kỹ năng tích lũy: cấp N chỉ được công nhận khi ô cấp N đạt và mọi cấp thấp hơn đã làm đều đạt.
+   5. Mức chung = kỹ năng thấp nhất.
+   6. Lên cấp chỉ khi cả 4 ô của hàng đều đạt; có ô chưa đạt thì xuống kiểm tra hàng dưới (nếu chưa làm). */
+const PASS_R=0.8, FORM_R=0.5;
+function guessRate(def,p){
+  if(def.type!=="choice"&&def.type!=="mcq")return 0;
+  const n=def.board?def.board.length:(p.opts||def.words||[]).length;
+  return n>1?1/n:0;
+}
+
+/* ================= TRẠNG THÁI ================= */
+const st={};
+function freshItem(){return {score:null,p:0,picks:[],plays:[],typed:[],cur:[],ord:[],rev:false,seen:false};}
+function resetAll(){LEVELS.forEach(l=>{st[l.key]={};SKILLS.forEach(s=>{st[l.key][s.key]=Q[l.key][s.key].items.map(freshItem);});});}
+resetAll();
+let view="intro", cur=null, childName="", backToResult=false;
+const card=document.getElementById("card"), grid=document.getElementById("grid");
+
+/* ================= GIỌNG ĐỌC ================= */
+const synth=window.speechSynthesis||null;
+let voices=[], voiceName=null, rate=0.8, playingBtn=null, runId=0;
+try{voiceName=localStorage.getItem("ept-voice");const r=parseFloat(localStorage.getItem("ept-rate"));if(r)rate=r;}catch(e){}
+function loadVoices(){
+  const sel=document.getElementById("voiceSel"), warn=document.getElementById("voiceWarn");
+  if(!synth){warn.hidden=false;warn.textContent="Trình duyệt này chưa hỗ trợ đọc tiếng Anh. Hãy mở trang bằng Chrome, Edge hoặc Safari.";return;}
+  voices=synth.getVoices().filter(v=>/^en([-_]|$)/i.test(v.lang));
+  const rank=v=>(/en[-_]US/i.test(v.lang)?0:/en[-_]GB/i.test(v.lang)?1:2);
+  voices.sort((a,b)=>rank(a)-rank(b)||a.name.localeCompare(b.name));
+  if(!voices.length){warn.hidden=false;warn.textContent="Máy chưa có giọng tiếng Anh. Hãy cài thêm giọng English trong phần cài đặt ngôn ngữ của máy, hoặc dùng Chrome.";}
+  else warn.hidden=true;
+  const accent=l=>/US/i.test(l)?"Mỹ":/GB/i.test(l)?"Anh":/AU/i.test(l)?"Úc":/IN/i.test(l)?"Ấn":/CA/i.test(l)?"Canada":l;
+  sel.innerHTML=voices.map(v=>`<option value="${esc(v.name)}">${esc(v.name)} – giọng ${accent(v.lang)}</option>`).join("");
+  if(voiceName&&voices.some(v=>v.name===voiceName)) sel.value=voiceName;
+  else if(voices[0]){voiceName=voices[0].name;sel.value=voiceName;}
+}
+if(synth){loadVoices();synth.onvoiceschanged=loadVoices;}else loadVoices();
+document.getElementById("voiceSel").onchange=e=>{voiceName=e.target.value;try{localStorage.setItem("ept-voice",voiceName)}catch(_){}speak(["Hello! I am your English helper."]);};
+document.querySelectorAll("#rateSeg button").forEach(b=>{
+  if(parseFloat(b.dataset.r)===rate)b.classList.add("on");
+  b.onclick=()=>{rate=parseFloat(b.dataset.r);document.querySelectorAll("#rateSeg button").forEach(x=>x.classList.toggle("on",x===b));try{localStorage.setItem("ept-rate",rate)}catch(_){}};
+});
+document.getElementById("voiceTest").onclick=e=>speak(["Hello! Let's go to the park."],e.currentTarget);
+const vb=document.getElementById("voiceBtn"), vp=document.getElementById("vp");
+vb.onclick=()=>{vp.hidden=!vp.hidden;vb.setAttribute("aria-expanded",String(!vp.hidden));if(!vp.hidden)loadVoices();};
+document.addEventListener("click",e=>{if(!vp.hidden&&!e.target.closest(".voice-panel")&&!e.target.closest("#chgVoice")){vp.hidden=true;vb.setAttribute("aria-expanded","false");}});
+function setBtn(b,on){if(!b)return;b.classList.toggle("on",on);const i=b.querySelector(".ic");if(i)i.textContent=on?"■":"▶";}
+function stopSpeak(){runId++;if(synth)synth.cancel();setBtn(playingBtn,false);playingBtn=null;}
+/* Giọng thứ hai cho hội thoại: giọng tiếng Anh khác, nếu máy không có thì đổi cao độ */
+function altVoice(main){
+  if(!main)return null;
+  const other=voices.filter(v=>v.name!==main.name);
+  return other.find(v=>v.lang===main.lang)||other.find(v=>v.lang.slice(0,2)==="en")||null;
+}
+function speak(seq,btn,gap){
+  if(!synth){vp.hidden=false;loadVoices();return;}
+  const same=btn&&btn===playingBtn; stopSpeak(); if(same)return;
+  const id=++runId, v=voices.find(x=>x.name===voiceName), v2=altVoice(v);
+  const pause=gap!=null?gap:(seq.length>1?800:0);
+  if(btn){playingBtn=btn;setBtn(btn,true);}
+  let i=0;
+  const next=()=>{
+    if(id!==runId)return;
+    if(i>=seq.length){if(btn&&playingBtn){setBtn(playingBtn,false);playingBtn=null;}return;}
+    const it=seq[i++], t=typeof it==="string"?it:it.t, alt=typeof it==="object"&&it.alt;
+    const u=new SpeechSynthesisUtterance(t), vv=alt&&v2?v2:v;
+    if(vv){u.voice=vv;u.lang=vv.lang;}else u.lang="en-US";
+    u.pitch=alt&&!v2?1.35:1;
+    u.rate=rate;u.onend=()=>setTimeout(next,pause);u.onerror=()=>setTimeout(next,0);
+    synth.speak(u);
+  };
+  next();
+}
+const splitSay=s=>s.split(/(?<=[.?!])\s+/);
+function toSeq(say){
+  if(Array.isArray(say))return say.flatMap(([k,t],n)=>splitSay(t).map((x,j)=>({t:x,alt:k===1})));
+  return splitSay(say);
+}
+
+/* ================= CHẤM ĐIỂM ================= */
+function norm(s){return s.toLowerCase().replace(/[’']/g,"'").replace(/[.,!?]/g,"").replace(/\s+/g," ").trim().replace(/^(it's|it is|a|an|the)\s+/,"").replace(/^(a|an|the)\s+/,"");}
+const flat=s=>String(s).toLowerCase().replace(/[’']/g,"'").replace(/[.,!?]/g,"").replace(/\s+/g," ").trim();
+function scoreItem(def,s){
+  if(def.type==="rate")return s.score;
+  let c=0,g=0;const k=def.prompts.length;
+  def.prompts.forEach((p,i)=>{
+    const v=s.picks[i];g+=guessRate(def,p);
+    if((def.type==="choice"||def.type==="mcq")&&v===p.ans)c++;
+    if(def.type==="spell"&&v===p.ans)c++;
+    if(def.type==="order"&&v&&p.ans.some(a=>flat(a)===flat(v)))c++;
+    if(def.type==="type"&&v!=null&&p.ans.includes(norm(v)))c++;
+  });
+  g/=k;
+  const r=Math.max(0,(c/k-g)/(1-g));
+  let sc=r>=PASS_R-1e-9?2:r>=FORM_R-1e-9?1:0;
+  if(def.listen&&s.plays.some(n=>n>2))sc=Math.min(sc,1);
+  return sc;
+}
+function cellScore(lv,sk){
+  const items=st[lv][sk];
+  if(items.every(x=>x.score==="x"))return "x";
+  if(items.some(x=>x.score===null))return null;
+  const nums=items.map(x=>typeof x.score==="number"?x.score:0);
+  const sum=nums.reduce((a,b)=>a+b,0), max=2*nums.length;
+  if(sum>=max*5/6-1e-9&&!nums.includes(0))return 2;
+  return sum>=max/2-1e-9?1:0;
+}
+const cellUntouched=(lv,sk)=>st[lv][sk].every(x=>x.score===null&&!x.picks.length);
+const cellDone=(lv,sk)=>st[lv][sk].every(x=>x.score!==null);
+function answeredCells(){let n=0;LEVELS.forEach(l=>SKILLS.forEach(s=>{if(typeof cellScore(l.key,s.key)==="number")n++;}));return n;}
+
+/* ================= BẢN ĐỒ ================= */
+const MH=660, ROWY=[612,492,372,252,132], XS=[64,150,250,336], WOB=[-6,10,-10,6];
+const SIGNS=[{side:"left",y:553},{side:"right",y:440},{side:"left",y:316},{side:"right",y:206},{side:"left",y:58}];
+function stationXY(li,k){const rev=li%2===1;return {x:XS[rev?3-k:k],y:ROWY[li]+WOB[k]};}
+function smoothPath(p){
+  let d=`M${p[0].x},${p[0].y}`;
+  for(let i=0;i<p.length-1;i++){const a=p[i-1]||p[i],b=p[i],c=p[i+1],e=p[i+2]||c;
+    d+=` C${(b.x+(c.x-a.x)/6).toFixed(1)},${(b.y+(c.y-a.y)/6).toFixed(1)} ${(c.x-(e.x-b.x)/6).toFixed(1)},${(c.y-(e.y-b.y)/6).toFixed(1)} ${c.x},${c.y}`;}
+  return d;
+}
+function mapSVG(){
+  const pts=[{x:22,y:648}];
+  LEVELS.forEach((l,li)=>{for(let k=0;k<4;k++)pts.push(stationXY(li,k));
+    if(li<LEVELS.length-1)pts.push({x:li%2?24:376,y:(ROWY[li]+ROWY[li+1])/2});});
+  pts.push({x:372,y:96},{x:300,y:58},{x:226,y:44});
+  const trail=smoothPath(pts);
+  const tree=(x,y,r)=>`<rect x="${x-2}" y="${y}" width="4" height="${r}" fill="var(--trunk)"/><circle cx="${x}" cy="${y-2}" r="${r}" fill="var(--tree)"/>`;
+  const house=(x,y)=>`<rect x="${x-9}" y="${y-8}" width="18" height="14" fill="var(--house)"/><path d="M${x-12} ${y-7} L${x} ${y-18} L${x+12} ${y-7} Z" fill="var(--roof)"/>`;
+  const flower=(x,y)=>`<circle cx="${x}" cy="${y}" r="3" fill="var(--flower)"/><circle cx="${x}" cy="${y}" r="1.2" fill="#F2B134"/>`;
+  return `<svg class="mapsvg" viewBox="0 0 400 ${MH}" preserveAspectRatio="none" aria-hidden="true">
+  <rect width="400" height="${MH}" fill="var(--z5)"/>
+  <path d="M0 186 L0 120 L62 70 L110 116 L226 30 L306 112 L346 80 L400 132 L400 186 Z" fill="var(--rock)"/>
+  <path d="M226 30 L204 56 L216 52 L228 62 L240 50 L250 58 Z M62 70 L50 86 L60 83 L70 90 L78 82 Z M346 80 L336 92 L346 89 L356 94 Z" fill="var(--snow)"/>
+  <path d="M0 188 Q100 172 200 188 T400 188 V${MH} H0 Z" fill="var(--z4)"/>
+  <path d="M400 214 C330 236 290 292 200 282 S60 300 0 272" stroke="var(--river)" stroke-width="14" fill="none" stroke-linecap="round"/>
+  ${house(110,214)}${house(142,208)}${house(196,216)}
+  <path d="M0 308 Q100 292 200 308 T400 308 V${MH} H0 Z" fill="var(--z3)"/>
+  <ellipse cx="96" cy="330" rx="62" ry="16" fill="var(--hilldark)"/><ellipse cx="300" cy="404" rx="70" ry="16" fill="var(--hilldark)"/>
+  <path d="M0 428 Q100 412 200 428 T400 428 V${MH} H0 Z" fill="var(--z2)"/>
+  ${tree(118,452,10)}${tree(150,446,8)}${tree(206,448,11)}${tree(250,454,8)}${tree(196,540,9)}
+  <path d="M0 548 Q100 532 200 548 T400 548 V${MH} H0 Z" fill="var(--z1)"/>
+  ${flower(130,570)}${flower(150,580)}${flower(226,566)}${flower(270,578)}${flower(120,648)}${flower(330,650)}
+  <ellipse cx="230" cy="648" rx="38" ry="8" fill="var(--river)"/>
+  <path d="${trail}" fill="none" stroke="var(--trailbase)" stroke-width="13" stroke-linecap="round"/>
+  <path d="${trail}" fill="none" stroke="var(--traildash)" stroke-width="2.5" stroke-dasharray="6 7" stroke-linecap="round"/>
+  <g transform="translate(364 34)"><circle r="20" fill="var(--card)" stroke="var(--wood)" stroke-width="2.5"/><path d="M0 -15 L5 0 L0 15 L-5 0 Z" fill="var(--wood)"/><path d="M0 -15 L5 0 L-5 0 Z" fill="#D9614C"/><text y="-21" text-anchor="middle" font-size="10" font-weight="800" fill="var(--wood)" font-family="sans-serif">N</text></g>
+  </svg>`;
+}
+function drawGrid(){
+  let h=mapSVG();
+  h+=`<span class="flag" style="left:${22/4}%;top:${648/MH*100}%" title="Xuất phát">🚩</span><span class="flag goal" style="left:${226/4}%;top:${40/MH*100}%">🏁<small>Đích</small></span>`;
+  LEVELS.forEach((l,li)=>{const g=SIGNS[li];
+    h+=`<div class="sign ${g.side}" style="top:${g.y/MH*100}%"><b>${l.cefr}</b><small>${l.short==="PET"?"B1 Preliminary":l.short==="FCE"?"B2 First":l.short}</small></div>`;
+    SKILLS.forEach((s,k)=>{
+      const {x,y}=stationXY(li,k);
+      const items=st[l.key][s.key], n=items.length, d=items.filter(x=>x.score!==null).length;
+      const v=cellScore(l.key,s.key), done=d===n;
+      const cls=!done&&d>0?"partial":v===null?"":v==="x"?"sx":"s"+v;
+      const isCur=view==="q"&&cur&&cur.lv===l.key&&cur.sk===s.key;
+      const label=done&&typeof v==="number"?(v===2?"✓":v===1?"~":"✕"):s.icon;
+      h+=`<button class="cell ${cls} ${isCur?'cur':''}" style="left:${x/4}%;top:${y/MH*100}%" data-lv="${l.key}" data-sk="${s.key}" aria-label="${s.name}, ${l.name}: đã làm ${d}/${n}">${label}${n>1&&d>0&&!done?`<small class="part">${d}/${n}</small>`:""}<span class="pl" aria-hidden="true">${s.name}</span></button>`;
+    });
+  });
+  grid.innerHTML=h;
+  grid.querySelectorAll(".cell").forEach(b=>b.onclick=()=>{backToResult=false;openQ(b.dataset.lv,b.dataset.sk);});
+  document.getElementById("toResult").disabled=answeredCells()<2;
+}
+
+/* ================= HIỂN THỊ ================= */
+const DISCLAIMER=`<p class="disclaimer">Bài kiểm tra này chỉ mang tính chất tham khảo để chọn chương trình học phù hợp. Đây không phải bài thi chuẩn và không thay thế bài thi lấy chứng chỉ (như Cambridge Starters, Movers, Flyers, A2 Key, B1 Preliminary, B2 First).</p>`;
+function tile(t){
+  if(t.sc)return `<span class="sc bg-${t.sc.bg}">${t.sc.it.map(i=>`<span class="it" style="left:${i.x}%;top:${i.y}%;font-size:${i.s||2}em">${i.e}</span>`).join("")}</span>`;
+  if(t.s)return `<span class="ill">${t.s}</span>`;
+  return t.e?`<span class="emo">${t.e}</span>`:t.c?`<span class="sw" style="background:${t.c}"></span>`:`<span class="num">${t.t}</span>`;}
+function scene(pic){return pic?`<div class="scene">${pic.map(t=>t.cap?`<span class="fig">${tile(t)}<small>${t.cap}</small></span>`:tile(t)).join("")}</div>`:"";}
+
+function renderIntro(){
+  card.innerHTML=`
+    <div class="chip-row"><span class="chip sun">Bắt đầu</span><span class="chip">15–40 phút tùy trình độ</span><span class="chip">Cần loa hoặc tai nghe</span></div>
+    <h3>Con đang ở khoảng nào?</h3>
+    <p class="detail">Chọn điểm xuất phát gần với con nhất. Con làm tốt thì hành trình tự đưa lên trạm khó hơn, con thấy khó thì đưa về trạm nhẹ hơn. Bố mẹ cũng có thể chạm thẳng vào trạm bất kỳ trên bản đồ.</p>
+    <p class="detail">Ở nhiều câu, con sẽ tự chạm vào màn hình. Bố mẹ ngồi cạnh, không nhắc đáp án để kết quả đúng với con nhất. Từ cấp B1, con có thể tự làm phần Nghe, Đọc, Viết.</p>
+    <label class="field" for="nm">Tên của con (không bắt buộc)</label>
+    <input class="text" id="nm" type="text" placeholder="Ví dụ: Bông" value="${esc(childName)}">
+    <label class="field">Điểm xuất phát</label>
+    <div class="starts">
+      <button class="start" data-lv="PA1"><strong>Mới làm quen</strong><small>Biết một số từ, màu sắc, con số, câu chào</small></button>
+      <button class="start" data-lv="A1"><strong>Đã học một thời gian</strong><small>Nói và đọc được câu ngắn về bản thân, gia đình</small></button>
+      <button class="start" data-lv="A2"><strong>Khá vững</strong><small>Đọc truyện ngắn, kể được việc đã làm</small></button>
+      <button class="start" data-lv="B1"><strong>Trung cấp</strong><small>Đọc bài báo ngắn, viết email, nói về ý kiến của mình</small></button>
+      <button class="start" data-lv="B2"><strong>Nâng cao</strong><small>Thảo luận, tranh luận, viết bài luận</small></button>
+      <button class="start" data-lv="PA1"><strong>Chưa rõ</strong><small>Bắt đầu từ trạm nhẹ nhất</small></button>
+    </div>${DISCLAIMER}`;
+  card.querySelectorAll(".start").forEach(b=>b.onclick=()=>{
+    childName=document.getElementById("nm").value.trim();
+    const lv=b.dataset.lv, sk=(SKILLS.find(s=>cellUntouched(lv,s.key))||SKILLS[0]).key;
+    openQ(lv,sk);
+  });
+}
+
+function openQ(lv,sk,i){
+  stopSpeak();view="q";
+  if(i==null){i=st[lv][sk].findIndex(x=>x.score===null);if(i<0)i=0;}
+  cur={lv,sk,i};render();
+}
+
+function renderQuestion(){
+  const {lv,sk,i}=cur, def=Q[lv][sk].items[i], s=st[lv][sk][i];
+  const L=LEVELS.find(l=>l.key===lv), S=SKILLS.find(x=>x.key===sk), items=st[lv][sk];
+  const dots=items.length>1?`<span class="dots" aria-label="Phần ${i+1}/${items.length}">${items.map((x,k)=>`<i class="${k===i?'now':x.score!==null?'done':''}"></i>`).join("")}</span>`:"";
+  let body="";
+  if(def.type==="rate") body=rateBody(def,s);
+  else if(s.score!==null&&s.score!=="x") body=`<div class="donebox"><p style="margin:0 0 10px">Con đã làm xong phần này.</p><button class="btn" id="redoItem">Làm lại phần này</button></div>`;
+  else body=autoBody(def,s);
+  card.innerHTML=`
+    <div class="chip-row"><span class="chip sun">${S.icon} Trạm ${S.name}</span><span class="chip">${L.name}</span>${items.length>1?`<span class="chip">Phần ${i+1}/${items.length}</span>`:""}${dots}</div>
+    <h3>${def.title}</h3>
+    <p class="hand">${def.hand}${hasAudio(def)?` <button class="linkish" id="chgVoice">Đổi giọng hoặc tốc độ</button>`:""}</p>
+    <div id="body">${body}</div>
+    <div class="nav">
+      <div>${i>0?`<button class="btn" id="prevI">Phần trước</button>`:""}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn ghost" id="skip">Bỏ qua phần này</button>
+        <button class="btn" id="res" ${answeredCells()<2?'disabled':''}>Xem kết quả</button>
+      </div>
+    </div>`;
+  wireCommon(def,s);
+  if(def.type==="rate")wireRate(def,s);
+  else if(s.score===null||s.score==="x")wireAuto(def,s,true);
+  else document.getElementById("redoItem").onclick=()=>{Object.assign(s,freshItem());render();};
+}
+function hasAudio(def){return def.listen||(def.qs&&def.qs.some(q=>q.say));}
+
+function rateBody(def,s){
+  const hasAns=(def.qs||[]).some(q=>q.ans)||!!def.model, locked=hasAns&&!s.seen, hid=s.rev?"":" hidden";
+  const qs=def.strip?`<div class="qrow strip-row"><div class="strip">${def.qs.map((q,k)=>`<span class="fig"><span class="stepn">${k+1}</span>${q.pic.map(tile).join("")}</span>`).join("")}</div><button class="play" data-q="0"><span class="ic">▶</span> Nghe yêu cầu</button></div>`:(def.qs||[]).map((q,k)=>q.read&&!q.pic&&!q.say?`<div class="task"><p class="en">${q.read}</p></div>`:
+    `<div class="qrow">${q.pic?scene(q.pic):""}<div style="flex:1;min-width:0">${q.read?`<p class="read" style="text-align:left;font-size:1.25rem;margin:0">${q.read}</p>`:`<span class="en">${q.label||""}</span>`}${q.ans?`<p class="ans"${hid}><b>Gợi ý:</b> ${q.ans}</p>`:""}</div>${q.say?`<button class="play" data-q="${k}"><span class="ic">▶</span> Nghe</button>`:""}</div>`).join("");
+  const model=def.model?`<div class="model"${hid}><b>Câu trả lời mẫu</b><p>${def.model}</p></div>`:"";
+  const reveal=hasAns?`<div class="reveal-row"><button class="btn rev" id="rev" aria-expanded="${s.rev}">${s.rev?"Ẩn đáp án gợi ý":"👀 Xem đáp án gợi ý"}</button>${locked?`<span class="lockmsg">Con nói xong, bố mẹ bấm xem đáp án để đối chiếu, sau đó chọn mức bên dưới.</span>`:""}</div>`:"";
+  const dots=["d2","d1","d0"];
+  return `${qs?`<div class="qlist">${qs}</div>`:""}${model}${reveal}
+    <div class="opts${locked?" locked":""}" role="radiogroup" aria-label="Mức độ của con">
+      ${def.opts.map((t,k)=>{const v=2-k;return `<button class="opt ${s.score===v?'sel':''}" role="radio" aria-checked="${s.score===v}" data-v="${v}" ${locked?"disabled":""}><span class="dot ${dots[k]}" aria-hidden="true"></span><span><strong>${t}</strong></span></button>`}).join("")}
+    </div>`;
+}
+function wireRate(def,s){
+  card.querySelectorAll(".play[data-q]").forEach(b=>b.onclick=()=>speak(splitSay(def.qs[+b.dataset.q].say),b));
+  const rv=document.getElementById("rev");
+  if(rv)rv.onclick=()=>{s.rev=!s.rev;s.seen=true;stopSpeak();document.getElementById("body").innerHTML=rateBody(def,s);wireRate(def,s);
+    const f=card.querySelector(s.rev?".ans:not([hidden]),.model:not([hidden])":".opts");if(f&&s.rev)f.scrollIntoView({block:"nearest",behavior:"smooth"});};
+  card.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    if(b.disabled)return;
+    s.score=Number(b.dataset.v);
+    card.querySelectorAll(".opt").forEach(x=>x.classList.toggle("sel",x===b));
+    setTimeout(nextItem,240);
+  });
+}
+
+/* thứ tự hiển thị phương án được xáo một lần cho mỗi lượt */
+function order(s,n){
+  if(!s.ord[s.p]){const a=[...Array(n).keys()];for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}s.ord[s.p]=a;}
+  return s.ord[s.p];
+}
+const gapHTML=t=>t.replace("___",'<span class="gap"></span>');
+const sayOf=(def,p)=>p.say||def.say;
+const playKey=(def,s)=>def.prompts[s.p].say?s.p:"all";
+
+function autoBody(def,s){
+  if(s.score==="x"){s.score=null;}
+  const p=def.prompts[s.p], k=def.prompts.length;
+  const hasSay=!!sayOf(def,p);
+  const bar=`<div class="prompt-bar"><span class="pcount">${def.type==="mcq"?"Câu":"Lượt"} ${s.p+1}/${k}</span>${hasSay?`<button class="play" id="playP"><span class="ic">▶</span> Nghe${def.say&&!p.say?" đoạn":""}</button>`:""}</div>`;
+  if(def.type==="choice"){
+    if(def.board) return bar+`<div class="board">${def.board.map((t,j)=>`<button class="tile${t.sc?" has-sc":""}" data-j="${j}" aria-label="${t.lb?"Đồng hồ "+t.lb:"Lựa chọn "+(j+1)}">${tile(t)}</button>`).join("")}</div>`;
+    const opts=p.opts||def.words, ord=p.opts?order(s,opts.length):opts.map((_,j)=>j);
+    return bar+scene(p.pic)+`<p class="read">${gapHTML(p.text)}</p><div class="words">${ord.map(j=>`<button class="word" data-j="${j}">${opts[j]}</button>`).join("")}</div>`;
+  }
+  if(def.type==="mcq"){
+    const txt=p.text||def.text, ord=order(s,p.opts.length);
+    const box=txt?`<div class="passage${p.text&&!def.text?" notice":""}">${txt}</div>`:"";
+    return bar+box+`<p class="qtext">${p.q}</p><div class="mopts">${ord.map(j=>`<button class="mopt" data-j="${j}">${p.opts[j]}</button>`).join("")}</div>`;
+  }
+  if(def.type==="spell"){
+    const n=p.ans.length, got=s.cur||[];
+    return bar+scene(p.pic)+`<div class="slots">${Array.from({length:n},(_,j)=>`<span class="slot">${got[j]!=null?p.letters[got[j]]:""}</span>`).join("")}</div>
+      <div class="letters">${p.letters.map((l,j)=>`<button class="letter" data-j="${j}" ${got.includes(j)?"disabled":""}>${l}</button>`).join("")}</div>
+      <div class="small-actions"><button class="btn" id="undo">Xóa chữ cuối</button><button class="btn ghost" id="dunno">Con chưa biết</button></div>`;
+  }
+  if(def.type==="order"){
+    const got=s.cur||[], ord=order(s,p.words.length);
+    return bar+`<div class="built">${got.length?got.map(j=>`<span>${p.words[j]}</span>`).join(""):'<span class="ph">Chạm các từ bên dưới theo đúng thứ tự</span>'}</div>
+      <div class="words">${ord.map(j=>`<button class="word" data-j="${j}" ${got.includes(j)?"disabled":""}>${p.words[j]}</button>`).join("")}</div>
+      <div class="small-actions"><button class="btn" id="undo">Xóa từ cuối</button><button class="btn ghost" id="dunno">Con chưa biết</button></div>`;
+  }
+  if(def.type==="type"){
+    return bar+scene(p.pic)+(p.text?`<p class="read">${gapHTML(p.text)}</p>`:"")+`<div class="typebox"><input id="tin" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Câu trả lời"><button class="btn primary" id="tok">Xong</button></div>
+      <div class="small-actions"><button class="btn ghost" id="dunno">Con chưa biết</button></div>`;
+  }
+}
+function wireAuto(def,s,auto){
+  const p=def.prompts[s.p];
+  const pb=document.getElementById("playP");
+  if(pb){
+    const say=sayOf(def,p), key=playKey(def,s), long=Array.isArray(say)||say.length>80;
+    const play=()=>{s.plays[key==="all"?0:key]=(s.plays[key==="all"?0:key]||0)+1;speak(toSeq(say),pb,long?350:undefined);};
+    pb.onclick=()=>{if(playingBtn===pb){stopSpeak();return;}play();};
+    const n=s.plays[key==="all"?0:key]||0;
+    if(auto&&n===0)setTimeout(()=>{if(cur&&view==="q")play();},350);
+  }
+  const record=val=>{
+    s.picks[s.p]=val;s.cur=[];
+    const keepAudio=def.say&&!p.say&&s.p<def.prompts.length-1;
+    if(!keepAudio)stopSpeak();
+    if(s.p<def.prompts.length-1){s.p++;setTimeout(()=>{document.getElementById("body").innerHTML=autoBody(def,s);
+        if(keepAudio&&playingBtn){const nb=document.getElementById("playP");playingBtn=nb;setBtn(nb,true);}
+        wireAuto(def,s,!keepAudio);},260);}
+    else{s.score=scoreItem(def,s);setTimeout(nextItem,260);}
+  };
+  if(def.type==="choice"||def.type==="mcq"){
+    card.querySelectorAll(".tile,.word,.mopt").forEach(b=>b.onclick=()=>{b.classList.add("picked");record(+b.dataset.j);});
+  }
+  if(def.type==="spell"||def.type==="order"){
+    s.cur=s.cur||[];
+    const n=def.type==="spell"?p.ans.length:p.words.length;
+    const join=()=>def.type==="spell"?s.cur.map(j=>p.letters[j]).join(""):s.cur.map(j=>p.words[j]).join(" ");
+    const redraw=()=>{document.getElementById("body").innerHTML=autoBody(def,s);wireAuto(def,s,false);};
+    card.querySelectorAll(".letter,.words .word").forEach(b=>b.onclick=()=>{
+      s.cur.push(+b.dataset.j);
+      if(s.cur.length===n){const w=join();redraw();setTimeout(()=>record(w),250);}
+      else redraw();
+    });
+    document.getElementById("undo").onclick=()=>{s.cur.pop();redraw();};
+    document.getElementById("dunno").onclick=()=>record("");
+  }
+  if(def.type==="type"){
+    const inp=document.getElementById("tin");
+    const ok=()=>{if(!inp.value.trim()){inp.focus();return;}record(inp.value);};
+    document.getElementById("tok").onclick=ok;
+    inp.onkeydown=e=>{if(e.key==="Enter")ok();};
+    document.getElementById("dunno").onclick=()=>record("");
+    if(window.innerWidth>860)inp.focus();
+  }
+}
+function wireCommon(def,s){
+  const cv=document.getElementById("chgVoice");
+  if(cv)cv.onclick=e=>{e.stopPropagation();vp.hidden=false;vb.setAttribute("aria-expanded","true");loadVoices();window.scrollTo({top:0,behavior:"smooth"});};
+  const pv=document.getElementById("prevI"); if(pv)pv.onclick=()=>openQ(cur.lv,cur.sk,cur.i-1);
+  document.getElementById("skip").onclick=()=>{if(s.score===null){Object.assign(s,freshItem());s.score="x";}nextItem();};
+  document.getElementById("res").onclick=()=>{stopSpeak();view="result";render();};
+}
+
+function nextItem(){
+  stopSpeak();
+  const {lv,sk,i}=cur, items=st[lv][sk];
+  const nx=items.findIndex((x,k)=>k>i&&x.score===null);
+  if(nx>=0){openQ(lv,sk,nx);return;}
+  advance();
+}
+function advance(){
+  if(backToResult){backToResult=false;view="result";render();return;}
+  const {lv,sk}=cur, li=LEVELS.findIndex(l=>l.key===lv), si=SKILLS.findIndex(s=>s.key===sk);
+  for(let k=1;k<=4;k++){const s=SKILLS[(si+k)%4].key;if(!cellDone(lv,s)){openQ(lv,s);return;}}
+  const vals=SKILLS.map(s=>cellScore(lv,s.key)).filter(v=>typeof v==="number");
+  const firstEmpty=i=>LEVELS[i]&&SKILLS.find(s=>cellUntouched(LEVELS[i].key,s.key));
+  const allPass=vals.length>=3&&vals.every(v=>v===2);
+  if(allPass&&firstEmpty(li+1)){openQ(LEVELS[li+1].key,firstEmpty(li+1).key);return;}
+  if(!allPass&&firstEmpty(li-1)){openQ(LEVELS[li-1].key,firstEmpty(li-1).key);return;}
+  view="result";render();
+}
+
+/* ================= KẾT QUẢ ================= */
+function skillInfo(sk){
+  const v=LEVELS.map(l=>{const c=cellScore(l.key,sk);return typeof c==="number"?c:null;});
+  const tested=v.some(x=>x!==null);
+  let lvl=-1;for(let i=0;i<v.length;i++){if(v[i]===2)lvl=i;else if(v[i]!==null)break;}
+  const forming=v[lvl+1]===1;
+  let check=null;const lowest=v.findIndex(x=>x!==null);
+  if(tested&&lowest>0&&v[lowest]!==2&&v[lowest-1]===null)check={lv:LEVELS[lowest-1].key,why:"thử trạm nhẹ hơn"};
+  for(let i=1;i<v.length;i++)if(v[i]===2&&v[i-1]!==null&&v[i-1]<2)check={lv:LEVELS[i-1].key,why:"cấp này chưa đạt, nên củng cố"};
+  const missAt=i=>i>=0&&i<LEVELS.length?Q[LEVELS[i].key][sk].items.map((d,k)=>({d,lv:i,sc:st[LEVELS[i].key][sk][k].score})).filter(x=>typeof x.sc==="number"&&x.sc<2):[];
+  const next=missAt(lvl+1);
+  const gaps=[];for(let i=0;i<=lvl;i++)gaps.push(...missAt(i));
+  return {tested,lvl,forming,v,check,next,gaps};
+}
+const LAST=LEVELS.length-1;
+function renderResult(){
+  stopSpeak();
+  const who=childName?esc(childName):"con";
+  const info={};SKILLS.forEach(s=>info[s.key]=skillInfo(s.key));
+  const tested=SKILLS.filter(s=>info[s.key].tested);
+  if(!tested.length){card.innerHTML=`<h3>Chưa đủ dữ liệu</h3><p class="detail">Hãy làm ít nhất 2 trạm để xem kết quả.</p><button class="btn primary" id="bk">Quay lại</button>`;document.getElementById("bk").onclick=()=>{view="intro";render();};return;}
+  const lv=tested.map(s=>info[s.key].lvl).sort((a,b)=>a-b);
+  const overall=lv[0];
+  let badge,explain,startIdx,unclear=false;
+  const lowestT=Math.min(...tested.map(s=>info[s.key].v.findIndex(x=>x!==null)));
+  if(overall<0&&lowestT>0){
+    unclear=true;startIdx=lowestT-1;
+    badge=`Chưa vững ${LEVELS[lowestT].name}`;
+    explain=`${cap(who)} làm được một phần yêu cầu cấp ${LEVELS[lowestT].cefr}. Hãy làm thêm các trạm cấp ${LEVELS[lowestT-1].cefr} bên dưới để biết con đã vững tới đâu.`;
+  }else if(overall<0){
+    const anyF=tested.some(s=>info[s.key].v[0]===1);
+    badge=anyF?"Đang ở cấp Pre A1 Starters":"Bắt đầu từ nền tảng Pre A1 Starters";
+    explain=anyF?`${cap(who)} đã làm được một phần yêu cầu Pre A1 nhưng chưa đều. Nên hoàn thiện cấp này trước khi lên A1.`:`${cap(who)} đang ở giai đoạn làm quen. Đây là điểm xuất phát rất bình thường; nên học chương trình nền tảng Pre A1.`;
+    startIdx=0;
+  }else if(overall===LAST){
+    badge="Đã vững B2 First";explain=`${cap(who)} làm tốt phần lớn yêu cầu cấp B2. Có thể học chương trình nâng cao hướng tới C1, hoặc luyện thi chứng chỉ B2 First, IELTS.`;startIdx=LEVELS.length;
+  }else{
+    badge=`Vững ${LEVELS[overall].name}, sẵn sàng học ${LEVELS[overall+1].name}`;
+    explain=`${cap(who)} làm tốt phần lớn yêu cầu cấp ${LEVELS[overall].cefr}. Bước tiếp theo là chương trình ${LEVELS[overall+1].name}.`;startIdx=overall+1;
+  }
+  const startName=startIdx>LAST?"nâng cao sau B2 (hướng C1)":LEVELS[startIdx].name;
+  const areaList=a=>[...new Set(a.map(x=>x.d.area.toLowerCase()))].join("; ");
+  const cards=SKILLS.map(s=>{
+    const x=info[s.key];let tag,note;
+    if(!x.tested){tag=["na","Chưa khảo sát"];note="Bố mẹ chưa làm trạm của kỹ năng này.";}
+    else if(x.lvl<overall){tag=["weak","Cần bồi đắp"];note=x.lvl<0?"Chưa vững Pre A1.":`Mới vững ${LEVELS[x.lvl].cefr}, thấp hơn mức chung.`;}
+    else if(x.lvl>overall){tag=["ok","Thế mạnh"];note=`Vững ${LEVELS[x.lvl].cefr}, cao hơn mức chung.`;}
+    else{tag=x.forming?["mid","Đang lên"]:(x.lvl<0?["weak","Cần bồi đắp"]:["ok","Đúng mức"]);note=x.lvl<0?(x.forming?"Đang hình thành Pre A1.":"Chưa vững Pre A1."):`Vững ${LEVELS[x.lvl].cefr}${x.forming?", đang lên cấp tiếp theo":""}.`;}
+    const bars=LEVELS.map((l,i)=>i<=x.lvl?'<i class="on"></i>':(i===x.lvl+1&&x.forming)?'<i class="half"></i>':'<i></i>').join("");
+    const areas=x.next.length?`<p class="areas">Cần luyện ở mức ${LEVELS[x.lvl+1].cefr}: ${areaList(x.next)}.</p>`:"";
+    return `<div class="skill"><h4>${s.icon} ${s.name} <span class="tag ${tag[0]}">${tag[1]}</span></h4>
+      <div class="steps" aria-hidden="true">${bars}</div><div class="steps-lb" aria-hidden="true">${LEVELS.map(l=>`<span>${l.cefr}</span>`).join("")}</div>
+      <p>${note}</p>${areas}</div>`;
+  }).join("");
+  const weak=tested.filter(s=>info[s.key].lvl<overall||(overall<0&&info[s.key].lvl<0)).sort((a,b)=>info[a.key].lvl-info[b.key].lvl);
+  const planItems=unclear?[]:weak.map(s=>{
+    const k=info[s.key].lvl+1;
+    if(k===0){const areas=info[s.key].next.length?info[s.key].next:Q.PA1[s.key].items.map(d=>({d}));
+      return `<li><b>${s.name}</b> (mức Pre A1): ${areas.map(a=>a.d.tip).join(" ")}</li>`;}
+    return `<li><b>${s.name}</b> (mức ${LEVELS[k].cefr}): ${ADVICE[LEVELS[k].key][s.key]}</li>`;
+  });
+  const gaps=overall>=0?tested.filter(s=>info[s.key].gaps.length&&!weak.includes(s)).map(s=>`<li><b>${s.name}:</b> ${info[s.key].gaps.map(g=>g.d.tip||`ôn lại ${g.d.area.toLowerCase()} (${LEVELS[g.lv].cefr}).`).join(" ")}</li>`):[];
+  const beyond=startIdx>LAST?`<p style="margin:10px 0 0">Hướng phát triển tiếp theo: ${SKILLS.map(s=>`<b>${s.name}</b>: ${BEYOND[s.key]}`).join(" ")}</p>`:"";
+  const checks=SKILLS.filter(s=>info[s.key].check||!info[s.key].tested||(unclear&&info[s.key].lvl<0));
+  card.innerHTML=`
+    <div class="chip-row"><span class="chip sun">Kết quả</span><span class="chip">Tham khảo để chọn lộ trình</span></div>
+    <h3>Kết quả hành trình của ${who}</h3>
+    <span class="badge">${badge}</span>
+    <p class="detail">${explain}</p>
+    <div class="skills">${cards}</div>
+    <div class="plan"><h4>Gợi ý chọn chương trình</h4>
+      <p style="margin:0">${unclear?`Tạm thời có thể bắt đầu từ chương trình <b>${startName}</b>. Kết quả sẽ rõ hơn sau khi con làm thêm các trạm cấp thấp hơn.`:`Bắt đầu học chương trình <b>${startName}</b>${planItems.length?". Song song, ưu tiên bồi đắp:":". Các kỹ năng khá đều, có thể học chương trình tổng hợp 4 kỹ năng."}`}</p>
+      ${planItems.length?`<ol>${planItems.join("")}</ol>`:""}
+      ${gaps.length?`<p style="margin:10px 0 0">Vài chỗ nhỏ còn hổng ở các cấp đã đạt, nên ôn lại nhanh:</p><ul>${gaps.join("")}</ul>`:""}
+      ${beyond}
+    </div>
+    ${checks.length?`<div class="more"><h4>Muốn kết quả chính xác hơn?</h4><p style="margin:4px 0 0;font-size:.9rem">Làm thêm các trạm sau, kết quả sẽ tự cập nhật:</p>
+      <div class="btns">${checks.map(s=>{const c=info[s.key].check;const l=c?c.lv:unclear?LEVELS[startIdx].key:LEVELS[Math.min(LAST,startIdx)].key;
+        return `<button class="btn" data-lv="${l}" data-sk="${s.key}">${s.icon} ${s.name} ${LEVELS.find(x=>x.key===l).cefr}${c?` – ${c.why}`:""}</button>`}).join("")}</div></div>`:""}
+    <div class="nav"><button class="btn" id="redo">Làm lại từ đầu</button></div>${DISCLAIMER}`;
+  card.querySelectorAll(".more .btn").forEach(b=>b.onclick=()=>{backToResult=true;openQ(b.dataset.lv,b.dataset.sk);});
+  document.getElementById("redo").onclick=()=>{resetAll();view="intro";cur=null;render();};
+}
+document.getElementById("toResult").onclick=()=>{stopSpeak();view="result";render();};
+
+function render(){
+  drawGrid();
+  if(view==="intro")renderIntro();else if(view==="result")renderResult();else renderQuestion();
+  if(window.innerWidth<860&&view!=="intro")card.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+render();
+</script>
+</body>
+</html>
+
+</body></html>
