@@ -3,52 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mục Lục Tài Liệu HTML</title>
+  <title>Mục Lục Theo Nhóm</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background-color: #f4f7f6;
       color: #2d3436;
-      max-width: 720px;
+      max-width: 780px;
       margin: 40px auto;
       padding: 0 20px;
     }
     h1 {
       text-align: center;
       color: #0984e3;
-      margin-bottom: 8px;
-    }
-    p.subtitle {
-      text-align: center;
-      color: #636e72;
-      margin-bottom: 30px;
-      font-size: 15px;
+      margin-bottom: 24px;
     }
     #search-box {
       width: 100%;
       padding: 12px 16px;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
       border: 1px solid #dfe6e9;
       border-radius: 10px;
       font-size: 16px;
       box-sizing: border-box;
       outline: none;
+      background: #fff;
     }
     #search-box:focus {
       border-color: #0984e3;
+    }
+    .group-section {
+      margin-bottom: 32px;
+    }
+    .group-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d3436;
+      border-left: 4px solid #0984e3;
+      padding-left: 12px;
+      margin-bottom: 14px;
     }
     .file-list {
       list-style: none;
       padding: 0;
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
     .file-item a {
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #ffffff;
-      padding: 16px 20px;
+      padding: 14px 18px;
       border-radius: 10px;
       text-decoration: none;
       color: #2d3436;
@@ -78,85 +84,136 @@
 </head>
 <body>
 
-  <h1>Danh Sách Trang HTML</h1>
-  <p class="subtitle">Tự động cập nhật từ kho lưu trữ GitHub</p>
-
-  <input type="text" id="search-box" placeholder="Gõ tên file để tìm kiếm nhanh...">
-  <div id="status">Đang tải danh sách file...</div>
-  <ul class="file-list" id="file-list"></ul>
+  <h1>Mục Lục Tài Liệu HTML</h1>
+  <input type="text" id="search-box" placeholder="Tìm kiếm tên file hoặc tên nhóm...">
+  <div id="status">Đang tải danh sách theo nhóm...</div>
+  <div id="groups-container"></div>
 
   <script>
-    // Tự động nhận diện tên tài khoản và tên kho lưu trữ từ đường dẫn GitHub Pages
+    // Tùy chỉnh tên hiển thị đẹp cho từng thư mục nhóm (bên trái là tên thư mục trên GitHub)
+    const GROUP_LABELS = {
+      "root": "Tài liệu chung",
+      "lop-4": "Lớp 4",
+      "lop-6": "Lớp 6",
+      "reading": "Đọc hiểu"
+    };
+
     const hostParts = window.location.hostname.split('.');
     const pathParts = window.location.pathname.split('/').filter(Boolean);
-    
-    const owner = hostParts[0]; // Tự động lấy username (ví dụ: lehanh2882-liy)
-    const repo = pathParts[0];  // Tự động lấy tên kho lưu trữ
+    const owner = hostParts[0];
+    const repo = pathParts[0];
 
-    const listEl = document.getElementById('file-list');
+    const containerEl = document.getElementById('groups-container');
     const statusEl = document.getElementById('status');
     const searchBox = document.getElementById('search-box');
-    let allHtmlFiles = [];
+    let groupedItems = []; // [{ groupKey, groupLabel, name, path }]
 
-    async function loadFiles() {
+    async function scanPath(path = "") {
+      const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
+      const res = await fetch(url);
+      if (!res.ok) return [];
+      const entries = await res.json();
+      let results = [];
+
+      for (const entry of entries) {
+        if (entry.type === "dir") {
+          const subResults = await scanPath(entry.path);
+          results = results.concat(subResults);
+        } else if (
+          entry.type === "file" &&
+          (entry.name.endsWith(".html") || entry.name.endsWith(".htm")) &&
+          entry.path.toLowerCase() !== "index.html"
+        ) {
+          const parts = entry.path.split("/");
+          const groupKey = parts.length > 1 ? parts[0] : "root";
+          const groupLabel = GROUP_LABELS[groupKey] || groupKey;
+          const displayName = entry.name.replace(/\.html?$/i, "");
+
+          results.push({
+            groupKey,
+            groupLabel,
+            name: displayName,
+            path: entry.path
+          });
+        }
+      }
+      return results;
+    }
+
+    async function init() {
       if (!owner || !repo) {
-        statusEl.textContent = "Hãy mở trang này qua đường link GitHub Pages (https://tentaikhoan.github.io/ten-kho/) để danh sách tự động hiển thị.";
+        statusEl.textContent = "Hãy mở qua đường link GitHub Pages để tự động quét các nhóm file.";
         return;
       }
-
       try {
-        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/`);
-        if (!response.ok) throw new Error("Không thể tải danh sách file");
-        
-        const files = await response.json();
-        // Lọc lấy tất cả file .html và .htm, loại trừ chính file index.html
-        allHtmlFiles = files.filter(file => 
-          file.type === 'file' && 
-          (file.name.endsWith('.html') || file.name.endsWith('.htm')) && 
-          file.name.toLowerCase() !== 'index.html'
-        );
-
-        renderList(allHtmlFiles);
-      } catch (err) {
-        statusEl.textContent = "Lỗi khi tải danh sách: Hãy đảm bảo kho lưu trữ đang ở chế độ Public.";
+        groupedItems = await scanPath("");
+        renderGroups(groupedItems);
+      } catch (e) {
+        statusEl.textContent = "Không thể tải danh sách. Hãy kiểm tra kho lưu trữ đã bật Public và GitHub Pages chưa.";
       }
     }
 
-    function renderList(files) {
-      listEl.innerHTML = '';
-      if (files.length === 0) {
-        statusEl.textContent = "Chưa có file HTML nào khác trong thư mục này.";
+    function renderGroups(items) {
+      containerEl.innerHTML = "";
+      if (items.length === 0) {
+        statusEl.style.display = "block";
+        statusEl.textContent = "Chưa có file HTML nào phù hợp.";
         return;
       }
-      statusEl.style.display = 'none';
+      statusEl.style.display = "none";
 
-      files.forEach(file => {
-        const li = document.createElement('li');
-        li.className = 'file-item';
-        // Hiển thị tên đẹp hơn (bỏ đuôi .html)
-        const displayName = file.name.replace(/\.html?$/i, '');
-        li.innerHTML = `
-          <a href="./${encodeURIComponent(file.name)}" target="_blank">
-            <span>${displayName}</span>
-            <span class="badge">Mở trang ↗</span>
-          </a>
-        `;
-        listEl.appendChild(li);
+      // Gom nhóm theo groupKey
+      const map = new Map();
+      for (const item of items) {
+        if (!map.has(item.groupKey)) {
+          map.set(item.groupKey, { label: item.groupLabel, files: [] });
+        }
+        map.get(item.groupKey).files.push(item);
+      }
+
+      map.forEach((group) => {
+        const section = document.createElement("div");
+        section.className = "group-section";
+
+        const title = document.createElement("div");
+        title.className = "group-title";
+        title.textContent = group.label;
+        section.appendChild(title);
+
+        const ul = document.createElement("ul");
+        ul.className = "file-list";
+
+        group.files.forEach((f) => {
+          const li = document.createElement("li");
+          li.className = "file-item";
+          const encodedPath = f.path.split("/").map(encodeURIComponent).join("/");
+          li.innerHTML = `
+            <a href="./${encodedPath}" target="_blank">
+              <span>${f.name}</span>
+              <span class="badge">Mở trang ↗</span>
+            </a>
+          `;
+          ul.appendChild(li);
+        });
+
+        section.appendChild(ul);
+        containerEl.appendChild(section);
       });
     }
 
-    // Tính năng tìm kiếm nhanh
-    searchBox.addEventListener('input', (e) => {
-      const keyword = e.target.value.toLowerCase();
-      const filtered = allHtmlFiles.filter(f => f.name.toLowerCase().includes(keyword));
-      renderList(filtered);
-      if (filtered.length === 0 && allHtmlFiles.length > 0) {
-        statusEl.style.display = 'block';
-        statusEl.textContent = "Không tìm thấy file phù hợp.";
+    searchBox.addEventListener("input", (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) {
+        renderGroups(groupedItems);
+        return;
       }
+      const filtered = groupedItems.filter(
+        (item) => item.name.toLowerCase().includes(q) || item.groupLabel.toLowerCase().includes(q)
+      );
+      renderGroups(filtered);
     });
 
-    loadFiles();
+    init();
   </script>
 
 </body>
